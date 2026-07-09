@@ -102,7 +102,7 @@
   .hero{padding:76px 0 92px;border-bottom:1px solid var(--line)}
   .hero-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:72px;align-items:center}
   .hero-kicker{margin-bottom:22px}
-  .hero .sub{margin-top:22px;font-size:1.1rem;line-height:1.7;color:var(--ink-soft);max-width:560px}
+  .hero .sub{margin-top:22px;font-size:1.1rem;line-height:1.7;color:var(--ink);max-width:560px}
   .date-line{margin-top:26px;font-size:1rem;color:var(--ink-soft)}
   .date-line strong{color:var(--ink);font-weight:700}
   .hero-photo{max-width:560px;margin:0 auto}
@@ -126,11 +126,19 @@
   .count--mini .count-card{min-width:60px;padding:9px 6px 7px;border-width:1px;border-radius:10px}
   .count--mini .num{font-size:1.15rem}
   .count--mini .lbl{font-size:.55rem;margin-top:4px}
+  .hero .date-line{margin-top:30px;font-size:1.12rem;color:var(--ink)}
+  .hero .count{gap:16px;margin-top:28px;flex-wrap:nowrap}
+  .hero .count-card{flex:1;min-width:0;padding:22px 8px 18px;border:3px solid var(--ink);border-radius:18px}
+  .hero .count-card .num{font-size:clamp(2rem,4vw,3rem);color:#141310}
+  .hero .count-card .lbl{margin-top:10px;font-size:.72rem;color:var(--ink-faint)}
+  .hero .hero-cta{margin-top:42px}
+  .hero .hero-cta .btn{background:#1f6542;border-color:#1f6542;border-radius:999px;padding:19px 36px;box-shadow:none}
+  .hero .hero-cta .btn:hover{background:#174f34;box-shadow:none}
 
   /* ---------- Proof strip ---------- */
   .proof{background:var(--card);padding:72px 0 76px;border-bottom:1px solid var(--line)}
   .proof-shell{max-width:920px;margin:0 auto}
-  .proof-title{text-align:center;font-size:clamp(2rem,4.5vw,3.45rem);color:var(--ink-soft);font-weight:600;letter-spacing:-.02em}
+  .proof-title{font-family:'Sora',sans-serif;text-align:center;font-size:clamp(1.4rem,3vw,2rem);color:var(--ink-soft);font-weight:500;letter-spacing:.01em}
   .proof-rating{display:flex;align-items:center;justify-content:center;gap:24px;margin:28px auto 34px}
   .proof-excellent{font-size:1.25rem;font-weight:700;color:var(--ink);white-space:nowrap}
   .proof-trust{display:block;max-width:390px;width:100%;height:auto;margin:0}
@@ -417,6 +425,11 @@
     .hero-cta .btn,.comp-cta .btn,.learn-cta .btn,.register .btn{width:100%}
     .count{gap:8px}
     .count-card{flex:1;min-width:0}
+    .hero .count{gap:8px}
+    .hero .count-card{padding:18px 4px 15px;border-radius:14px}
+    .hero .count-card .num{font-size:clamp(1.7rem,8vw,2.3rem)}
+    .hero .count-card .lbl{font-size:.58rem;letter-spacing:.1em}
+    .hero .hero-cta .btn{width:auto;max-width:100%;padding:18px 32px}
     .pill-grid{grid-template-columns:1fr}
     .pill{font-size:.9rem;padding:14px 4px}
     .creds{grid-template-columns:1fr}
@@ -451,9 +464,9 @@
   <div class="wrap hero-grid">
     <div>
       <p class="kicker hero-kicker">For households earning $150K+</p>
-      <h1 id="hero-heading">You learned how to earn more. Now design the tax year that helps you <em class="accent">keep more.</em></h1>
+      <h1 id="hero-heading">You learned how to <em class="accent">earn</em> more. Now design the tax year that helps you <em class="accent">keep more.</em></h1>
       <p class="sub">In this free live class, Preston Seo covers five ways to plan for taxes and fund investments. They could cut your tax bill by $30K+ and help put up to $50K toward your portfolio. Your result will depend on your situation.</p>
-      <p class="date-line">Next live class: <strong data-ev="full">Thursday, July 9th @ 7 PM ET</strong></p>
+      <p class="date-line">Live on <strong data-ev="full">Thursday, July 9th @ 7 PM ET</strong></p>
       <div class="count" role="timer" aria-live="off" aria-label="Countdown to the live masterclass">
         <div class="count-card"><span class="num" data-cd="d">00</span><span class="lbl">Days</span></div>
         <div class="count-card"><span class="num" data-cd="h">00</span><span class="lbl">Hours</span></div>
@@ -461,7 +474,7 @@
         <div class="count-card"><span class="num" data-cd="s">00</span><span class="lbl">Seconds</span></div>
       </div>
       <div class="hero-cta">
-        <a class="btn" href="#register">Reserve My Free Seat
+        <a class="btn" href="#register">Save My Free Seat
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
