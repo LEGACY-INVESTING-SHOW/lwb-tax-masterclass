@@ -22,6 +22,8 @@
     --ink-faint:#7d8378;
     --green:#0e3b2e;            /* deep emerald, from variation E */
     --green-dark:#0b2f25;       /* emerald ink, from variation E */
+    --cta:#1f6542;
+    --cta-hover:#174f34;
     --green-lite:#8fc7a6;
     --green-tint:#e7ece3;
     --line:#d8d2c4;
@@ -77,12 +79,12 @@
   /* ---------- Buttons ---------- */
   .btn{
     display:inline-flex;align-items:center;justify-content:center;gap:10px;
-    background:var(--green);color:var(--cream);text-decoration:none;
-    border:1px solid var(--green);border-radius:7px;padding:17px 30px;cursor:pointer;
+    background:var(--cta);color:var(--cream);text-decoration:none;
+    border:1px solid var(--cta);border-radius:999px;padding:17px 32px;cursor:pointer;
     font-family:'Sora',sans-serif;font-size:1rem;font-weight:600;letter-spacing:.01em;
-    box-shadow:0 6px 16px rgba(14,59,46,.12);
+    box-shadow:none;
   }
-  .btn:hover{background:var(--green-dark);box-shadow:0 10px 22px rgba(14,59,46,.22)}
+  .btn:hover{background:var(--cta-hover);border-color:var(--cta-hover);box-shadow:none}
   .btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
   .btn svg{flex-shrink:0}
   .btn.block{width:100%}
@@ -132,17 +134,28 @@
   .hero .count-card .num{font-size:clamp(2rem,4vw,3rem);color:#141310}
   .hero .count-card .lbl{margin-top:10px;font-size:.72rem;color:var(--ink-faint)}
   .hero .hero-cta{margin-top:42px}
-  .hero .hero-cta .btn{background:#1f6542;border-color:#1f6542;border-radius:999px;padding:19px 36px;box-shadow:none}
-  .hero .hero-cta .btn:hover{background:#174f34;box-shadow:none}
 
   /* ---------- Proof strip ---------- */
-  .proof{background:var(--card);padding:72px 0 76px;border-bottom:1px solid var(--line)}
-  .proof-shell{max-width:920px;margin:0 auto}
-  .proof-title{font-family:'Sora',sans-serif;text-align:center;font-size:clamp(1.4rem,3vw,2rem);color:var(--ink-soft);font-weight:500;letter-spacing:.01em}
-  .proof-rating{display:flex;align-items:center;justify-content:center;gap:24px;margin:28px auto 34px}
-  .proof-excellent{font-size:1.25rem;font-weight:700;color:var(--ink);white-space:nowrap}
-  .proof-trust{display:block;max-width:390px;width:100%;height:auto;margin:0}
-  .proof-press-frame{background:var(--cream);border:1px solid #c8d0ca;padding:11px;box-shadow:0 5px 13px rgba(21,33,27,.14)}
+  .proof{background:var(--card);padding:80px 0;border-bottom:1px solid var(--line)}
+  .proof-shell{max-width:920px;margin:0 auto;text-align:center}
+  .proof-kicker{font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--green)}
+  .proof-title{margin-top:10px;font-family:'Fraunces',serif;font-size:clamp(2rem,4.2vw,3.1rem);line-height:1.08;color:var(--ink);letter-spacing:-.025em}
+  .proof-lede{max-width:54ch;margin:14px auto 0;font-size:1rem;color:var(--ink-soft)}
+  .social-proof-grid{display:grid;grid-template-columns:repeat(3,1fr);max-width:800px;margin:38px auto 0}
+  .social-card{display:flex;align-items:center;justify-content:center;gap:13px;padding:8px 24px;text-align:left;text-decoration:none;color:var(--ink)}
+  .social-card + .social-card{border-left:1px solid var(--line)}
+  .social-icon{display:grid;place-items:center;width:44px;height:44px;flex:0 0 44px;border-radius:50%;background:var(--green);color:var(--cream)}
+  .social-icon svg{width:23px;height:23px}
+  .social-number{display:block;font-size:1.45rem;font-weight:700;line-height:1.05;letter-spacing:-.035em}
+  .social-platform{display:block;margin-top:3px;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint)}
+  .proof-trust-row{display:flex;align-items:center;justify-content:center;gap:18px;margin:34px auto 0;padding-top:28px;border-top:1px solid var(--line)}
+  .proof-excellent{font-size:.95rem;font-weight:700;color:var(--ink);white-space:nowrap}
+  .trust-mark{display:flex;align-items:center;gap:15px;color:#00a884}
+  .trust-stars{display:flex;gap:3px}
+  .trust-stars span{display:grid;place-items:center;width:32px;height:32px;background:#00a884;color:#f4f2ec;font-size:1.28rem;line-height:1}
+  .trustpilot-wordmark{display:inline-flex;align-items:center;gap:5px;color:#15211b;font-size:1.82rem;font-weight:700;letter-spacing:-.06em;line-height:1}
+  .trustpilot-wordmark .star{color:#00a884;font-size:2.2rem;line-height:.7}
+  .proof-press-frame{margin-top:30px;background:var(--cream);border:1px solid #c8d0ca;padding:11px;box-shadow:0 5px 13px rgba(21,33,27,.14)}
   .proof-press{display:block;width:100%;height:auto;margin:0 auto}
 
   /* ---------- Before / After ---------- */
@@ -268,21 +281,6 @@
   .t-card:hover{box-shadow:0 10px 24px rgba(21,33,27,.08)}
   .t-card blockquote{font-size:.98rem;line-height:1.6;color:var(--ink-soft)}
 
-  /* ---------- FAQ ---------- */
-  .faq{background:var(--card)}
-  .faq-list{border-top:1px solid var(--line)}
-  .faq-list details{border-bottom:1px solid var(--line)}
-  .faq-list summary{
-    display:flex;justify-content:space-between;align-items:center;gap:22px;
-    padding:24px 0;cursor:pointer;list-style:none;
-    font-size:1.08rem;font-weight:600;color:var(--ink);line-height:1.4;
-  }
-  .faq-list summary::-webkit-details-marker{display:none}
-  .faq-x{font-size:1.5rem;font-weight:400;line-height:1;color:var(--green);flex-shrink:0}
-  .faq-x::before{content:"+"}
-  details[open] .faq-x::before{content:"\2212"}
-  .faq-list details p{padding:0 36px 26px 0;font-size:.99rem}
-
   /* ---------- Final CTA ---------- */
   .register{background:var(--green-dark);color:var(--bone-muted);border-top:1px solid rgba(244,242,236,.12)}
   .register .section-head{margin-bottom:0}
@@ -296,8 +294,6 @@
   .register .count-card .lbl{color:var(--bone-faint)}
   .register .hero-cta{text-align:center}
   .register .btn-note{color:var(--bone-faint)}
-  .register .btn{background:var(--gold);border-color:var(--gold);color:var(--green-dark);box-shadow:0 8px 22px rgba(0,0,0,.2)}
-  .register .btn:hover{background:#e4ac45;border-color:#e4ac45;color:var(--green-dark);box-shadow:0 11px 26px rgba(0,0,0,.26)}
   .register-grid{display:grid;grid-template-columns:.86fr 1.14fr;gap:76px;align-items:center}
   .register-copy h2{color:#f4f2ec}
   .register-copy .kicker{color:var(--bone-muted)}
@@ -361,16 +357,15 @@
   .sticky-cta{
     position:fixed;left:0;right:0;bottom:0;z-index:900;
     display:none;align-items:center;justify-content:space-between;gap:14px;
-    background:var(--green);
+    background:var(--cream);
     padding:12px 18px calc(12px + env(safe-area-inset-bottom));
-    box-shadow:0 -8px 20px rgba(11,47,37,.25);
+    box-shadow:0 -8px 20px rgba(11,47,37,.14);
   }
   .sticky-cta.is-on{display:flex}
   @media (min-width:901px){.sticky-cta.is-on{display:none}}
-  .sc-date{font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--bone-faint);line-height:1.45}
-  .sc-date strong{display:block;color:#f4f2ec;font-size:.82rem;font-weight:600;letter-spacing:0;text-transform:none}
-  .sticky-cta .btn{background:var(--cream);color:var(--green);border-color:var(--cream);padding:13px 22px;font-size:.92rem;box-shadow:none;flex-shrink:0}
-  .sticky-cta .btn:hover{background:#ffffff}
+  .sc-date{min-width:0;font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);line-height:1.45}
+  .sc-date strong{display:block;color:var(--ink);font-size:.82rem;font-weight:600;letter-spacing:0;text-transform:none}
+  .sticky-cta .btn{flex-shrink:0}
 
   /* ---------- Footer ---------- */
   footer{background:var(--green-dark);color:var(--bone-faint);padding:68px 0 56px}
@@ -410,10 +405,6 @@
     .register-form-card,.modal-panel{padding:34px 26px 28px}
     .creds{gap:20px}
     .count-card{min-width:70px}
-    .proof{padding:58px 0 62px}
-    .proof-rating{gap:14px;margin:24px auto 28px}
-    .proof-excellent{font-size:1.05rem}
-    .proof-trust{max-width:320px}
   }
   @media (max-width:680px){
     .t-card{grid-column:span 6!important}
@@ -422,28 +413,45 @@
     .feat-stat{padding:36px 28px}
   }
   @media (max-width:560px){
+    /* Keep the primary action in the first mobile viewport without losing the editorial hero hierarchy. */
+    .announce{padding:8px 14px;font-size:.73rem;letter-spacing:.075em}
+    .hero{padding:36px 0 52px}
+    .hero-kicker{margin-bottom:14px;font-size:.69rem;letter-spacing:.16em}
+    .hero h1{font-size:2.32rem;line-height:1}
+    .hero .sub{margin-top:16px;font-size:1rem;line-height:1.62}
+    .hero .date-line{margin-top:20px;font-size:1.02rem}
     .hero-cta .btn,.comp-cta .btn,.learn-cta .btn,.register .btn{width:100%}
     .count{gap:8px}
     .count-card{flex:1;min-width:0}
-    .hero .count{gap:8px}
-    .hero .count-card{padding:18px 4px 15px;border-radius:14px}
-    .hero .count-card .num{font-size:clamp(1.7rem,8vw,2.3rem)}
+    .hero .count{gap:8px;margin-top:20px}
+    .hero .count-card{padding:14px 4px 12px;border-width:2px;border-radius:13px}
+    .hero .count-card .num{font-size:clamp(1.6rem,7.5vw,2.1rem)}
     .hero .count-card .lbl{font-size:.58rem;letter-spacing:.1em}
-    .hero .hero-cta .btn{width:auto;max-width:100%;padding:18px 32px}
+    .hero .hero-cta{margin-top:26px}
     .pill-grid{grid-template-columns:1fr}
     .pill{font-size:.9rem;padding:14px 4px}
     .creds{grid-template-columns:1fr}
     .feat-quote{padding:32px 26px}
     .feat-quote blockquote{font-size:1.15rem}
     .feat-stat{padding:36px 28px}
-    .proof-rating{flex-direction:column;gap:12px}
-    .proof-trust{max-width:100%}
+    .proof{padding:64px 0}
+    .social-proof-grid{grid-template-columns:repeat(3,minmax(0,1fr));max-width:100%;margin-top:30px}
+    .social-card{justify-content:center;gap:8px;padding:8px;min-width:0}
+    .social-card + .social-card{border-left:1px solid var(--line);border-top:0}
+    .social-icon{width:34px;height:34px;flex-basis:34px}
+    .social-icon svg{width:18px;height:18px}
+    .social-number{font-size:1.1rem}
+    .social-platform{margin-top:2px;font-size:.55rem;letter-spacing:.065em}
+    .proof-trust-row{flex-direction:column;gap:12px;margin-top:26px;padding-top:24px}
+    .trust-mark{gap:10px}
+    .trust-stars span{width:28px;height:28px;font-size:1.1rem}
+    .trustpilot-wordmark{font-size:1.5rem}
+    .trustpilot-wordmark .star{font-size:1.85rem}
     .proof-press-frame{padding:7px;box-shadow:0 4px 10px rgba(21,33,27,.12)}
   }
   @media (max-width:420px){
     .count-card{padding:11px 4px 9px}
     .count-card .num{font-size:1.4rem}
-    .faq-list details p{padding-right:12px}
     .hero{padding:40px 0 56px}
   }
 </style>
@@ -488,10 +496,29 @@
 <!-- ============ 3. PROOF STRIP ============ -->
 <section class="proof" aria-label="Reviews and press features">
   <div class="wrap proof-shell">
-    <h2 class="proof-title">As featured in</h2>
-    <div class="proof-rating">
+    <p class="proof-kicker">Trusted by millions</p>
+    <h2 class="proof-title">A community of 6.5M+ follows Preston's work.</h2>
+    <p class="proof-lede">Practical investing and tax education, shared daily across the platforms people already use.</p>
+    <div class="social-proof-grid" aria-label="Preston Seo social-media following">
+      <a class="social-card" href="https://www.tiktok.com/@thelegacyinvestingshow" target="_blank" rel="noopener noreferrer" aria-label="Follow Preston Seo on TikTok, more than 2.5 million followers">
+        <span class="social-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M14.6 3c.4 2.6 1.9 4.3 4.4 4.8v3.2c-1.6.1-3.1-.4-4.4-1.3v5.6a6.1 6.1 0 1 1-5.2-6.1v3.3a2.9 2.9 0 1 0 2 2.7V3h3.2Z" fill="currentColor"/></svg></span>
+        <span><strong class="social-number">2.5M+</strong><span class="social-platform">TikTok followers</span></span>
+      </a>
+      <a class="social-card" href="https://www.instagram.com/thelegacyinvestingshow/" target="_blank" rel="noopener noreferrer" aria-label="Follow Preston Seo on Instagram, more than 1.6 million followers">
+        <span class="social-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></span>
+        <span><strong class="social-number">1.6M+</strong><span class="social-platform">Instagram followers</span></span>
+      </a>
+      <a class="social-card" href="https://www.youtube.com/@legacyinvestingshow" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to Legacy Investing Show on YouTube, more than 559 thousand subscribers">
+        <span class="social-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="2.5" y="5.5" width="19" height="13" rx="4" stroke="currentColor" stroke-width="2"/><path d="m10 9 5 3-5 3V9Z" fill="currentColor"/></svg></span>
+        <span><strong class="social-number">559K+</strong><span class="social-platform">YouTube subscribers</span></span>
+      </a>
+    </div>
+    <div class="proof-trust-row" role="img" aria-label="Rated Excellent on Trustpilot">
       <span class="proof-excellent">Excellent</span>
-      <img class="proof-trust" src="https://images.clickfunnels.com/cdn-cgi/image/width=700px,fit=scale-down,f=auto,q=80/https://statics.myclickfunnels.com/workspace/JDNxNX/image/19027167/file/83de40a5b23b7b08072121480854b8eb.jpg" alt="Rated Excellent on Trustpilot" loading="lazy" decoding="async">
+      <div class="trust-mark" aria-hidden="true">
+        <span class="trust-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></span>
+        <span class="trustpilot-wordmark"><span class="star">★</span>Trustpilot</span>
+      </div>
     </div>
     <div class="proof-press-frame">
       <img class="proof-press" src="https://images.clickfunnels.com/cdn-cgi/image/width=700px,fit=scale-down,f=auto,q=80/https://statics.myclickfunnels.com/workspace/JDNxNX/image/14801538/file/af204c7a353d959657f10645474ff2c1.png" alt="Financial Times, Yahoo Finance, Business Insider and The Sun logos" loading="lazy" decoding="async">
@@ -524,7 +551,7 @@
     <div class="section-head center">
       <p class="kicker">Why You Need This</p>
       <h2 id="compare-heading">The same income can lead to a very different tax bill.</h2>
-      <p class="lede">You can keep the same job and the same CPA. What changes is when you start planning. One couple earning $250K found $27,639 after we built their plan. Client example, results vary.</p>
+      <p class="lede">You can keep the same job and the same CPA. What changes is when you start planning. One couple earning $250K found $27,639 after we built their plan.</p>
     </div>
     <div class="comp-grid">
       <article class="comp-card comp-card--before">
@@ -694,7 +721,7 @@
       <aside class="feat-stat">
         <p class="stat-label">Client example</p>
         <p class="stat-num">$27,639</p>
-        <p class="stat-cap">Found after we built a plan for a couple earning $250K/yr. Client example, results vary.</p>
+        <p class="stat-cap">Found after we built a plan for a couple earning $250K/yr.</p>
       </aside>
     </div>
     <div class="t-grid">
@@ -757,47 +784,7 @@
   </div>
 </section>
 
-<!-- ============ 9. FAQ ============ -->
-<section class="faq" aria-labelledby="faq-heading">
-  <div class="wrap-narrow">
-    <div class="section-head center">
-      <p class="kicker">Questions</p>
-      <h2 id="faq-heading">Still have questions?</h2>
-    </div>
-    <div class="faq-list">
-      <details name="faq">
-        <summary>Is this free, and is it actually live?<span class="faq-x" aria-hidden="true"></span></summary>
-        <p>Yes. The class is free, and Preston teaches it live. He also stays for a 30-minute Q&amp;A.</p>
-      </details>
-      <details name="faq">
-        <summary>What if I can't make this session?<span class="faq-x" aria-hidden="true"></span></summary>
-        <p>It runs live each week. Register now and you'll get the details by email for this one or the next.</p>
-      </details>
-      <details name="faq">
-        <summary>I'm a W-2 employee. Will this apply to me?<span class="faq-x" aria-hidden="true"></span></summary>
-        <p>Yes. Preston covers ideas for W-2 earners and business owners. He explains who each one may fit.</p>
-      </details>
-      <details name="faq">
-        <summary>I already have a CPA. Does this conflict with them?<span class="faq-x" aria-hidden="true"></span></summary>
-        <p>No. Your CPA can still file the return. This class helps you plan sooner and ask better questions. You can take what you learn back to your CPA.</p>
-      </details>
-      <details name="faq">
-        <summary>Do I need real estate, a business, or prior tax knowledge?<span class="faq-x" aria-hidden="true"></span></summary>
-        <p>No. Preston starts with the basics and uses plain English. Real estate is only one part of the class.</p>
-      </details>
-      <details name="faq">
-        <summary>Is this mainly about buying Airbnbs?<span class="faq-x" aria-hidden="true"></span></summary>
-        <p>No. Real estate is one strategy inside a designed tax year, not the whole plan. You do not need a property, or capital ready to deploy, to use what you learn in the class.</p>
-      </details>
-      <details name="faq">
-        <summary>Are results guaranteed?<span class="faq-x" aria-hidden="true"></span></summary>
-        <p>No. This is educational only. Numbers on this page are examples, not promises. Work with a qualified professional before acting on what you learn.</p>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 10. FINAL CTA ============ -->
+<!-- ============ 9. FINAL CTA ============ -->
 <section class="register" aria-labelledby="final-cta-heading">
   <div class="wrap">
     <div class="section-head center">
