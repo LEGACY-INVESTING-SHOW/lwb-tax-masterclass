@@ -330,6 +330,7 @@
     background:#fdfbf5;font-family:'Instrument Sans',ui-sans-serif,system-ui,sans-serif;font-size:1rem;color:var(--ink);
   }
   .field input:focus{outline:none;border-color:var(--green)}
+  .field--hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
   .consent{display:flex;gap:10px;align-items:flex-start;margin:4px 0 6px}
   .consent input{margin-top:4px;accent-color:var(--green)}
   .consent label{font-size:.79rem;line-height:1.55;color:var(--ink-faint)}
@@ -338,6 +339,12 @@
     letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);
   }
   .register-form-card .btn{margin-top:20px}
+  .btn[disabled]{opacity:.72;cursor:wait}
+  .form-error{
+    margin-top:14px;padding:12px 14px;border:1px solid rgba(207,122,102,.35);
+    background:rgba(207,122,102,.08);color:#8e3e2f;border-radius:10px;
+    font-size:.84rem;line-height:1.55;
+  }
   .form-fine{margin-top:16px;text-align:center;font-size:.78rem;color:var(--ink-faint)}
   #form-success{text-align:center;padding:24px 8px}
   #form-success h3{margin-bottom:12px}
@@ -815,7 +822,6 @@
     <button type="button" class="modal-close" data-close-register aria-label="Close registration form">&times;</button>
     <h2 class="form-title" id="register-heading">Reserve your free seat</h2>
     <p class="form-lede">Enter your details and we'll send your workshop link and reminder.</p>
-    <!-- TODO: wire to ClickFunnels/CRM -->
     <form id="register-form" action="#" method="post" novalidate>
       <div id="form-fields">
         <div class="field">
@@ -830,11 +836,16 @@
           <label for="phone">Phone <span aria-hidden="true">(for your reminder)</span></label>
           <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="(555) 555-5555" required>
         </div>
+        <div class="field field--hp" aria-hidden="true">
+          <label for="website">Website</label>
+          <input type="text" id="website" name="website" autocomplete="off" tabindex="-1">
+        </div>
         <div class="consent">
           <input type="checkbox" id="sms" name="sms_consent">
           <label for="sms">I agree to receive text reminders about this workshop from Legacy Investing Show. Message and data rates may apply. Reply STOP to opt out anytime.</label>
         </div>
         <button type="submit" class="btn block">Save My Free Seat</button>
+        <p class="form-error" id="form-error" role="alert" hidden></p>
         <p class="form-fine">Free to attend. No credit card required.</p>
       </div>
       <div id="form-success" role="status" aria-live="polite" hidden>
@@ -955,18 +966,50 @@ setInterval(tick, 1000);
   registerIo.observe(registerSection);
 })();
 
-/* ---------- Registration popup + form (front-end demo only) ---------- */
-/* TODO: wire to ClickFunnels/CRM */
+/* ---------- Registration popup + form ---------- */
 (function(){
   const modal = document.getElementById('register');
   const form = document.getElementById('register-form');
   if (!modal || !form) return;
 
+  const formFields = document.getElementById('form-fields');
+  const formSuccess = document.getElementById('form-success');
+  const formError = document.getElementById('form-error');
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const submitLabel = submitBtn ? submitBtn.textContent : '';
   let lastFocus = null;
+
+  function clearError(){
+    if (!formError) return;
+    formError.hidden = true;
+    formError.textContent = '';
+  }
+
+  function showError(message){
+    if (!formError) return;
+    formError.textContent = message;
+    formError.hidden = false;
+  }
+
+  function setSubmitting(isSubmitting){
+    if (!submitBtn) return;
+    submitBtn.disabled = isSubmitting;
+    submitBtn.setAttribute('aria-busy', isSubmitting ? 'true' : 'false');
+    submitBtn.textContent = isSubmitting ? 'Sending...' : submitLabel;
+  }
+
+  function resetFormUi(){
+    clearError();
+    form.reset();
+    formFields.hidden = false;
+    formSuccess.hidden = true;
+    setSubmitting(false);
+  }
 
   function openModal(e){
     if (e) e.preventDefault();
     lastFocus = document.activeElement;
+    resetFormUi();
     modal.hidden = false;
     modal.classList.add('is-open');
     document.body.classList.add('modal-open');
@@ -991,13 +1034,45 @@ setInterval(tick, 1000);
     if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
   });
 
-  form.addEventListener('submit', function(e){
+  form.addEventListener('submit', async function(e){
     e.preventDefault();
+    clearError();
     if (!form.checkValidity()){ form.reportValidity(); return; }
-    document.getElementById('form-fields').hidden = true;
-    const ok = document.getElementById('form-success');
-    ok.hidden = false;
-    ok.querySelectorAll('[data-ev="full"]').forEach(el => { el.textContent = EV.full; });
+
+    const payload = {
+      first_name: form.elements.first_name.value.trim(),
+      email: form.elements.email.value.trim(),
+      phone: form.elements.phone.value.trim(),
+      sms_consent: form.elements.sms_consent.checked,
+      event_name: 'Legacy Investing Show Tax Strategy Workshop',
+      event_datetime_et: EV.full,
+      page_url: window.location.href,
+      submitted_at: new Date().toISOString(),
+      website: form.elements.website.value.trim()
+    };
+
+    setSubmitting(true);
+
+    try{
+      const response = await fetch('/api/register', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(payload)
+      });
+      const result = await response.json().catch(function(){ return {ok:false}; });
+
+      if (!response.ok || !result.ok){
+        throw new Error(result.error || 'Something went wrong while saving your seat. Please try again.');
+      }
+
+      formFields.hidden = true;
+      formSuccess.hidden = false;
+      formSuccess.querySelectorAll('[data-ev="full"]').forEach(el => { el.textContent = EV.full; });
+    } catch (err){
+      showError(err && err.message ? err.message : 'Something went wrong while saving your seat. Please try again.');
+    } finally {
+      setSubmitting(false);
+    }
   });
 })();
 </script>
