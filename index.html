@@ -502,7 +502,7 @@ head.appendChild(script);
     <div>
       <h1 id="hero-heading">Your 2026 tax bill is being decided <em class="accent">right now,</em> not next April.</h1>
       <p class="sub">Join me live and I'll walk through 5 tax strategies, show you where high earners may overpay, and explain which moves may still be available before year-end.</p>
-      <p class="date-line"><strong data-ev="full">Saturday, July 11th @ 7 PM ET</strong></p>
+      <p class="date-line"><strong data-ev="full">Sunday, July 12th @ 2 PM EST</strong></p>
       <div class="count" role="timer" aria-live="off" aria-label="Countdown to the live workshop">
         <div class="count-card"><span class="num" data-cd="d">00</span><span class="lbl">Days</span></div>
         <div class="count-card"><span class="num" data-cd="h">00</span><span class="lbl">Hours</span></div>
@@ -758,7 +758,7 @@ head.appendChild(script);
       <p class="kicker kicker--light">Live on Zoom</p>
       <h2 id="final-cta-heading">2026 still has <span data-days-left>174</span> days left. Some tax moves need to happen before December 31st.</h2>
       <p class="lede">I'll show you what to check now, what has a year-end deadline, and what to ask your tax professional.</p>
-      <p class="date-line"><strong data-ev="full">Saturday, July 11th @ 7 PM ET</strong></p>
+      <p class="date-line"><strong data-ev="full">Sunday, July 12th @ 2 PM EST</strong></p>
       <div class="count count--mini" role="timer" aria-label="Countdown to the live workshop">
         <div class="count-card"><span class="num" data-cd="d">00</span><span class="lbl">Days</span></div>
         <div class="count-card"><span class="num" data-cd="h">00</span><span class="lbl">Hours</span></div>
@@ -778,7 +778,7 @@ head.appendChild(script);
 
 <!-- ============ STICKY MOBILE CTA ============ -->
 <div class="sticky-cta" id="sticky-cta" aria-hidden="true">
-  <p class="sc-date">Workshop date<strong data-ev="full">Saturday, July 11th @ 7 PM ET</strong></p>
+  <p class="sc-date">Workshop date<strong data-ev="full">Sunday, July 12th @ 2 PM EST</strong></p>
   <a class="btn" href="#register">Save your seat</a>
 </div>
 
@@ -817,7 +817,7 @@ head.appendChild(script);
       </div>
       <div id="form-success" role="status" aria-live="polite" hidden>
         <h3>You're in.</h3>
-        <p>The workshop starts <strong data-ev="full">Saturday, July 11th @ 7 PM ET</strong>. Check your inbox for the confirmation and access link.</p>
+        <p>The workshop starts <strong data-ev="full">Sunday, July 12th @ 2 PM EST</strong>. Check your inbox for the confirmation and access link.</p>
       </div>
     </form>
   </div>
@@ -835,8 +835,10 @@ head.appendChild(script);
 </footer>
 
 <script>
-/* ---------- One live workshop: Saturday, July 11 at 7 PM Eastern ---------- */
-const EVENT_DATE = new Date('2026-07-11T19:00:00-04:00');
+/* ---------- One live workshop: Sunday, July 12 at 2 PM Eastern ---------- */
+const EVENT_DATE = new Date('2026-07-12T14:00:00-04:00');
+const EVENT_DISPLAY = 'Sunday, July 12th @ 2 PM EST';
+const EVENT_DAYTIME = 'SUNDAY @ 2 PM EST';
 
 /* ---------- Render date text from EVENT_DATE ---------- */
 function eventStrings(d){
@@ -844,12 +846,9 @@ function eventStrings(d){
     timeZone:'America/New_York',weekday:'long',month:'long',day:'numeric',hour:'numeric',hour12:true
   }).formatToParts(d);
   const g = t => { const p = parts.find(x => x.type === t); return p ? p.value : ''; };
-  const day = parseInt(g('day'),10);
-  const suf = (day%10===1 && day%100!==11) ? 'st' : (day%10===2 && day%100!==12) ? 'nd' : (day%10===3 && day%100!==13) ? 'rd' : 'th';
-  const time = g('hour') + ' ' + g('dayPeriod').toUpperCase() + ' ET';
   return {
-    full: g('weekday') + ', ' + g('month') + ' ' + day + suf + ' @ ' + time,
-    daytime: g('weekday').toUpperCase() + ' @ ' + time
+    full: EVENT_DISPLAY,
+    daytime: EVENT_DAYTIME
   };
 }
 const EV = eventStrings(EVENT_DATE);
