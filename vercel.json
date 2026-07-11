@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/taxseasonisnow",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/taxseasonisnow/",
+      "destination": "/index.html"
+    }
+  ]
+}
