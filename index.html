@@ -156,13 +156,12 @@ head.appendChild(script);
   .proof-kicker{font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--green)}
   .proof-title{margin-top:10px;font-family:'Instrument Sans',ui-sans-serif,system-ui,sans-serif;font-size:clamp(2rem,4.2vw,3.1rem);line-height:1.08;color:var(--ink);letter-spacing:-.025em}
   .proof-lede{max-width:54ch;margin:14px auto 0;font-size:1rem;color:var(--ink-soft)}
-  .social-proof-grid{display:grid;grid-template-columns:repeat(3,1fr);max-width:800px;margin:38px auto 0}
-  .social-card{display:flex;align-items:center;justify-content:center;gap:13px;padding:8px 24px;text-align:left;text-decoration:none;color:var(--ink)}
+  .social-proof-grid{display:grid;grid-template-columns:repeat(4,1fr);max-width:800px;margin:38px auto 0}
+  .social-card{display:flex;align-items:center;justify-content:center;gap:12px;padding:8px 16px;text-align:left;text-decoration:none;color:var(--ink)}
   .social-card + .social-card{border-left:1px solid var(--line)}
   .social-icon{display:grid;place-items:center;width:44px;height:44px;flex:0 0 44px;border-radius:50%;background:var(--green);color:var(--cream)}
   .social-icon svg{width:23px;height:23px}
   .social-number{display:block;font-size:1.45rem;font-weight:700;line-height:1.05;letter-spacing:-.035em}
-  .social-platform{display:block;margin-top:3px;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint)}
   .proof-trust-row{display:flex;align-items:center;justify-content:center;gap:18px;margin:34px auto 0;padding-top:28px;border-top:1px solid var(--line)}
   .proof-excellent{font-size:.95rem;font-weight:700;color:var(--ink);white-space:nowrap}
   .trust-mark{display:flex;align-items:center;gap:15px;color:#00a884}
@@ -455,13 +454,12 @@ head.appendChild(script);
     .feat-quote blockquote{font-size:1.15rem}
     .feat-stat{padding:36px 28px}
     .proof{padding:64px 0}
-    .social-proof-grid{grid-template-columns:repeat(3,minmax(0,1fr));max-width:100%;margin-top:30px}
-    .social-card{justify-content:center;gap:8px;padding:8px;min-width:0}
+    .social-proof-grid{grid-template-columns:repeat(4,minmax(0,1fr));max-width:100%;margin-top:30px}
+    .social-card{flex-direction:column;justify-content:center;gap:7px;padding:8px 3px;min-width:0;text-align:center}
     .social-card + .social-card{border-left:1px solid var(--line);border-top:0}
     .social-icon{width:34px;height:34px;flex-basis:34px}
     .social-icon svg{width:18px;height:18px}
-    .social-number{font-size:1.1rem}
-    .social-platform{margin-top:2px;font-size:.55rem;letter-spacing:.065em}
+    .social-number{font-size:1rem}
     .proof-trust-row{flex-direction:column;gap:12px;margin-top:26px;padding-top:24px}
     .trust-mark{gap:10px}
     .trust-stars span{width:28px;height:28px;font-size:1.1rem}
@@ -482,7 +480,7 @@ head.appendChild(script);
 
 <!-- ============ 1. ANNOUNCEMENT BAR ============ -->
 <header class="announce">
-  LIVE WITH <strong>PRESTON SEO — 8-FIGURE INVESTOR</strong> &middot; 6.5M+ FOLLOWERS
+  LIVE WITH <strong>PRESTON SEO — 8-FIGURE INVESTOR</strong><br>6.5M+ FOLLOWERS
 </header>
 
 <main id="main-content">
@@ -519,17 +517,21 @@ head.appendChild(script);
     <p class="proof-kicker">Audience &amp; Press</p>
     <h2 class="proof-title">6.5M+ people follow Preston across social media.</h2>
     <div class="social-proof-grid" aria-label="Preston Seo social-media following">
-      <div class="social-card">
+      <div class="social-card" role="img" aria-label="TikTok: 2.5 million followers">
         <span class="social-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M14.6 3c.4 2.6 1.9 4.3 4.4 4.8v3.2c-1.6.1-3.1-.4-4.4-1.3v5.6a6.1 6.1 0 1 1-5.2-6.1v3.3a2.9 2.9 0 1 0 2 2.7V3h3.2Z" fill="currentColor"/></svg></span>
-        <span><strong class="social-number">2.5M+</strong><span class="social-platform">TikTok followers</span></span>
+        <strong class="social-number">2.5M+</strong>
       </div>
-      <div class="social-card">
+      <div class="social-card" role="img" aria-label="Instagram: 1.6 million followers">
         <span class="social-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></span>
-        <span><strong class="social-number">1.6M+</strong><span class="social-platform">Instagram followers</span></span>
+        <strong class="social-number">1.6M+</strong>
       </div>
-      <div class="social-card">
+      <div class="social-card" role="img" aria-label="YouTube: 559 thousand subscribers">
         <span class="social-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="2.5" y="5.5" width="19" height="13" rx="4" stroke="currentColor" stroke-width="2"/><path d="m10 9 5 3-5 3V9Z" fill="currentColor"/></svg></span>
-        <span><strong class="social-number">559K+</strong><span class="social-platform">YouTube subscribers</span></span>
+        <strong class="social-number">559K+</strong>
+      </div>
+      <div class="social-card" role="img" aria-label="Facebook: 2.3 million followers">
+        <span class="social-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M13.5 21v-8h2.7l.4-3h-3.1v-1.9c0-.9.3-1.6 1.7-1.6H17V3.8c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.5V10H7v3h3v8h3.5Z" fill="currentColor"/></svg></span>
+        <strong class="social-number">2.3M+</strong>
       </div>
     </div>
     <div class="proof-trust-row" role="img" aria-label="Rated Excellent on Trustpilot">
