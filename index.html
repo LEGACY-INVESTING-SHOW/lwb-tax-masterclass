@@ -1018,9 +1018,7 @@ setInterval(tick, 1000);
         throw new Error(result.error || 'Something went wrong while saving your seat. Please try again.');
       }
 
-      formFields.hidden = true;
-      formSuccess.hidden = false;
-      formSuccess.querySelectorAll('[data-ev="full"]').forEach(el => { el.textContent = EV.full; });
+      window.location.href = '/taxseasonconfirmation';
     } catch (err){
       showError(err && err.message ? err.message : 'Something went wrong while saving your seat. Please try again.');
     } finally {

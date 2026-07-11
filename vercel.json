@@ -1,6 +1,14 @@
 {
   "rewrites": [
     {
+      "source": "/taxseasonconfirmation",
+      "destination": "/confirmation.html"
+    },
+    {
+      "source": "/taxseasonconfirmation/",
+      "destination": "/confirmation.html"
+    },
+    {
       "source": "/taxseasonisnow",
       "destination": "/index.html"
     },
