@@ -295,9 +295,8 @@ head.appendChild(script);
     font-variant-numeric:tabular-nums;
   }
   .stat-cap{color:var(--bone-muted);font-size:1rem;max-width:26ch}
-  .t-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:20px;margin-top:20px}
+  .t-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:20px}
   .t-card{
-    grid-column:span 2;
     background:var(--card);border:1px solid var(--line);border-radius:8px;
     padding:30px;display:flex;flex-direction:column;gap:14px;
   }
@@ -414,7 +413,6 @@ head.appendChild(script);
     .feat-grid{grid-template-columns:1fr}
     .creds{grid-template-columns:repeat(2,1fr)}
     .pill-grid{grid-template-columns:repeat(2,1fr)}
-    .t-card{grid-column:span 3}
   }
   @media (max-width:900px){
     .hero-grid{grid-template-columns:1fr;gap:48px}
@@ -437,7 +435,7 @@ head.appendChild(script);
     .count-card{min-width:70px}
   }
   @media (max-width:680px){
-    .t-card{grid-column:span 6!important}
+    .t-grid{grid-template-columns:1fr}
     .feat-quote{padding:32px 26px}
     .feat-quote blockquote{font-size:1.15rem}
     .feat-stat{padding:36px 28px}
@@ -502,8 +500,8 @@ head.appendChild(script);
 <section class="hero" aria-labelledby="hero-heading">
   <div class="wrap hero-grid">
     <div>
-      <h1 id="hero-heading">Your 2026 tax bill is being decided <em class="accent">right now.</em> Not in April.</h1>
-      <p class="sub">Join me live and I'll show you the 5 tax strategies high earners use to cut their tax bill by $30K+ and grow their wealth... while the year is still open.</p>
+      <h1 id="hero-heading">Your 2026 tax bill is being decided <em class="accent">right now,</em> not next April.</h1>
+      <p class="sub">Join me live and I'll walk through 5 tax strategies, show you where high earners may overpay, and explain which moves may still be available before year-end.</p>
       <p class="date-line"><strong data-ev="full">Saturday, July 11th @ 7 PM ET</strong></p>
       <div class="count" role="timer" aria-live="off" aria-label="Countdown to the live workshop">
         <div class="count-card"><span class="num" data-cd="d">00</span><span class="lbl">Days</span></div>
@@ -523,8 +521,8 @@ head.appendChild(script);
     </figure>
     <div class="hero-proof" aria-label="Workshop proof points">
       <span>1,000+ high-earner tax returns reviewed</span>
-      <span>$19,604/yr average modeled tax savings across plans we've built</span>
-      <span>Every strategy from published IRS rules</span>
+      <span>Average modeled annual tax savings across our plans: $19,604</span>
+      <span>Every strategy based on published IRS rules</span>
     </div>
   </div>
 </section>
@@ -532,9 +530,8 @@ head.appendChild(script);
 <!-- ============ 3. PROOF STRIP ============ -->
 <section class="proof" aria-label="Reviews and press features">
   <div class="wrap proof-shell">
-    <p class="proof-kicker">Trusted by millions</p>
-    <h2 class="proof-title">A community of 6.5M+ follows Preston's work.</h2>
-    <p class="proof-lede">Practical investing and tax education, shared daily across the platforms people already use.</p>
+    <p class="proof-kicker">Audience &amp; Press</p>
+    <h2 class="proof-title">6.5M+ people follow Preston across social media.</h2>
     <div class="social-proof-grid" aria-label="Preston Seo social-media following">
       <div class="social-card">
         <span class="social-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M14.6 3c.4 2.6 1.9 4.3 4.4 4.8v3.2c-1.6.1-3.1-.4-4.4-1.3v5.6a6.1 6.1 0 1 1-5.2-6.1v3.3a2.9 2.9 0 1 0 2 2.7V3h3.2Z" fill="currentColor"/></svg></span>
@@ -566,11 +563,11 @@ head.appendChild(script);
 <section class="compare" aria-labelledby="mirror-heading">
   <div class="wrap-narrow">
     <p class="kicker">Does This Sound Familiar?</p>
-    <h2 id="mirror-heading">Earning more than ever... but keeping less than you should?</h2>
-    <p class="lede">You've spent your career earning good money. And somehow the money side still runs itself: the withholding hasn't been touched since your first day on the job, the 401(k) gets its automatic percentage, the savings sit in an account that barely moves, and your entire tax strategy is one rushed CPA meeting in April.</p>
-    <p class="lede">You've read the articles. You've saved the videos. Maybe you even asked your CPA about a strategy once, and they said “sure, we could look at that,” and then filing season came, and it never got looked at.</p>
-    <p class="lede">None of that is a mistake. Your CPA files clean returns, and filing clean is exactly what you hired them for. But a clean filing of an undesigned year is just overpayment with good paperwork.</p>
-    <div class="comp-cta"><a class="btn" href="#register">Save your seat, it's free</a></div>
+    <h2 id="mirror-heading">Earning more than ever, but keeping less than you should?</h2>
+    <p class="lede">You've spent your career earning good money, but most of your financial decisions still run on autopilot. Your withholding hasn't changed since your first day on the job, the 401(k) gets its automatic percentage, your savings barely earn anything, and your entire tax strategy is one rushed CPA meeting in April.</p>
+    <p class="lede">You've read the articles. You've saved the videos. Maybe you even asked your CPA about a strategy once. They said, “sure, we could look at that,” but filing season came and the conversation died.</p>
+    <p class="lede">Your CPA may be doing exactly what you hired them to do: filing an accurate return. But an accurate return can still document an overpayment if no one planned during the year.</p>
+    <div class="comp-cta"><a class="btn" href="#register">See the 5 strategies</a></div>
   </div>
 </section>
 
@@ -578,14 +575,14 @@ head.appendChild(script);
 <section class="april" aria-labelledby="april-heading">
   <div class="april-inner">
     <div>
-      <p class="kicker kicker--light">The Clock Is Already Running</p>
-      <p class="april-pull">You can't design a year that's already over.</p>
+      <p class="kicker kicker--light">Before Filing Season</p>
+      <p class="april-pull">Once the year ends, many tax moves are no longer available.</p>
     </div>
     <div>
-      <h2 id="april-heading">Why this matters in July, not April</h2>
-      <p>Every move that cuts a tax bill works while the year is still open. That includes the entity around your side income, the retirement structure, the accounts that never got opened, and the deductions that only exist if someone builds them. Some of those moves die on December 31st. Some die earlier. And the day you sign the return, the year closes for good.</p>
-      <p>That's why April feels so useless. By then your CPA is looking at money that already flowed and tax that already came out. They can't change any of it. They can only report it accurately.</p>
-      <p>The real tax season is right now, in the middle of summer, while nobody is thinking about taxes and there's still time to act. The most expensive year to lose is always this one, because it's the one with the most time left to compound.</p>
+      <h2 id="april-heading">Why July matters</h2>
+      <p>Some tax moves must be completed by December 31st. Others have earlier deadlines. These can include how you structure side income, which retirement accounts you fund, and deductions that require advance documentation.</p>
+      <p>That's why waiting until April is so limiting. By then your CPA is looking at income already earned, money already spent, and tax already withheld. Most of their job is to report what happened.</p>
+      <p>Starting in July gives you time to ask questions, set things up, and finish the paperwork before those deadlines.</p>
     </div>
   </div>
 </section>
@@ -595,49 +592,49 @@ head.appendChild(script);
   <div class="wrap">
     <div class="section-head">
       <p class="kicker">What I'll Cover</p>
-      <h2 id="learn-heading">The 5 tax strategies high earners use to design their year</h2>
-      <p class="lede">In about 90 minutes, live, I'll walk you through the five strategies high earners in our network use to design their year instead of filing it. Specifically:</p>
+      <h2 id="learn-heading">5 tax strategies high earners can review before year-end</h2>
+      <p class="lede">In about 90 minutes, I'll explain how each strategy works, when it may apply, and what has to happen before filing season.</p>
     </div>
     <ol class="learn-list">
       <li>
         <span class="learn-num" aria-hidden="true">01</span>
         <div>
           <h3>Where $150K+ W-2 earners may overpay</h3>
-          <p>The withholding, the accounts that never got opened, and the deductions that only exist if someone builds them in advance.</p>
+          <p>What to check in your withholding, retirement accounts, and current tax setup before year-end.</p>
         </div>
       </li>
       <li>
         <span class="learn-num" aria-hidden="true">02</span>
         <div>
-          <h3>The two versions of the same year</h3>
-          <p>I'll walk through a real plan we built for a W-2 couple earning about $250K, where the designed version models $27,639 better in one year on the same income.</p>
+          <h3>A real plan for a couple earning about $250K</h3>
+          <p>I'll walk through a real plan we built for a W-2 couple earning about $250K, with $27,639 in modeled tax savings in one year.</p>
         </div>
       </li>
       <li>
         <span class="learn-num" aria-hidden="true">03</span>
         <div>
-          <h3>Which moves die on December 31st</h3>
-          <p>And what you'd have to decide before then to make 2026 a designed year instead of a filed one.</p>
+          <h3>Which tax moves have a December 31st deadline</h3>
+          <p>What must be decided or set up for those strategies to apply in 2026.</p>
         </div>
       </li>
       <li>
         <span class="learn-num" aria-hidden="true">04</span>
         <div>
-          <h3>How the strategies work on published rules</h3>
-          <p>Clean documentation, no gray areas, and nothing your CPA would flinch at.</p>
+          <h3>The IRS rules behind each strategy</h3>
+          <p>What to document and what to review with your CPA.</p>
         </div>
       </li>
       <li>
         <span class="learn-num" aria-hidden="true">05</span>
         <div>
-          <h3>How to turn separate moves into one designed year</h3>
-          <p>So you leave knowing where your own year may be overpaying and what needs attention before it closes.</p>
+          <h3>How to decide what belongs in your tax plan</h3>
+          <p>You'll leave with a list of questions to take to your tax professional before year-end.</p>
         </div>
       </li>
     </ol>
     <p class="honesty">You won't get a list of hacks. If you're looking for a trick that makes taxes disappear, this workshop will disappoint you. It's a system for households that earn well and want the year built on purpose.</p>
     <div class="learn-cta">
-      <a class="btn" href="#register">Save your seat, it's free
+      <a class="btn" href="#register">Join the live workshop
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
       <p class="btn-note">Live on Zoom. No credit card required.</p>
@@ -656,11 +653,11 @@ head.appendChild(script);
         <p>I grew up in a <strong>first-generation immigrant family</strong>. My parents worked constantly and saved what they could, but nobody ever sat us down and explained how money really works in this country.</p>
         <p>I got good grades and found a good job, just like you're supposed to. Then I landed in corporate sales and <strong>hated almost every day of it</strong>. The paychecks grew, the tax bill grew faster, and the life I wanted kept getting pushed back another year.</p>
         <p>So I studied the tax code and the investors who use it well. Over time, I built a <strong>$15M+ real estate portfolio from scratch</strong>. By 28, my wife and I had <strong>both quit our jobs</strong>. One year, I made $500K and got a <strong>$46 federal refund</strong>. That was my result. Yours will depend on your own tax situation.</p>
-        <p>Since then I've reviewed <strong>over a thousand tax returns</strong> from high earners, and the pattern never changes: nobody loses their money in April. They lose it all year long, in the structure that never got built.</p>
-        <p>Today we have <strong>two little boys</strong>, and everything I teach comes back to them. Each year, I make the tax plan before my CPA files the return. This workshop is the plain-English version of what I wish someone had handed my parents 30 years ago.</p>
+        <p>Since then I've reviewed <strong>over a thousand tax returns</strong> from high earners. The biggest gaps usually came from decisions that were never made during the year, not math errors on the return.</p>
+        <p>Today we have <strong>two little boys</strong>. They're why I care so much about making the plan before my CPA files the return. This workshop is the plain-English version of what I wish someone had handed my parents 30 years ago.</p>
         <p class="sig">Preston Seo</p>
         <p class="sig-title">The Legacy Investing Show</p>
-        <a class="btn" href="#register">Join Me On The Free Workshop
+        <a class="btn" href="#register">Join me for the workshop
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
@@ -677,7 +674,7 @@ head.appendChild(script);
       </div>
       <div class="cred">
         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="10" stroke="#0e3b2e" stroke-width="1.6"/><path d="M6.5 11.5l3 3 5.5-6" stroke="#0e3b2e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span><strong>Financially free at 28</strong> with his wife</span>
+        <span><strong>Both left their jobs</strong> by age 28</span>
       </div>
       <div class="cred">
         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="10" stroke="#0e3b2e" stroke-width="1.6"/><path d="M6.5 11.5l3 3 5.5-6" stroke="#0e3b2e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -691,7 +688,7 @@ head.appendChild(script);
 <section aria-labelledby="quotes-heading">
   <div class="wrap">
     <div class="section-head center">
-      <h2 id="quotes-heading">What people say after the live workshop</h2>
+      <h2 id="quotes-heading">What past attendees told Preston</h2>
     </div>
     <div class="feat-grid">
       <article class="feat-quote">
@@ -708,7 +705,7 @@ head.appendChild(script);
       <aside class="feat-stat">
         <p class="stat-label">Client example</p>
         <p class="stat-num">$27,639</p>
-        <p class="stat-cap">Found after we built a plan for a couple earning $250K/yr.</p>
+        <p class="stat-cap">Modeled tax savings for a couple earning $250K a year.</p>
       </aside>
     </div>
     <div class="t-grid">
@@ -730,39 +727,6 @@ head.appendChild(script);
           <span class="t-avatar t-avatar--fallback" aria-hidden="true">RR</span>
           <div>
             <p class="t-handle">@rodyrod88</p>
-            <p class="t-source">Instagram comment</p>
-          </div>
-        </div>
-      </article>
-      <article class="t-card">
-        <span class="quote-mark" aria-hidden="true">&ldquo;</span>
-        <blockquote>"Preston, you're the man. Your live workshop was spot on! Very detailed and well organized. I can tell you are a great mentor."</blockquote>
-        <div class="testimonial-meta">
-          <img class="t-avatar" src="assets/testimonial-avatars/masonsco21.jpg" alt="" loading="lazy" decoding="async">
-          <div>
-            <p class="t-handle">@masonsco21</p>
-            <p class="t-source">Instagram comment</p>
-          </div>
-        </div>
-      </article>
-      <article class="t-card">
-        <span class="quote-mark" aria-hidden="true">&ldquo;</span>
-        <blockquote>"I appreciate your live workshop. It was really helpful, and hopefully I will achieve my goals and become financially free."</blockquote>
-        <div class="testimonial-meta">
-          <img class="t-avatar" src="assets/testimonial-avatars/annanaderii.jpg" alt="" loading="lazy" decoding="async">
-          <div>
-            <p class="t-handle">@annanaderii</p>
-            <p class="t-source">Instagram comment</p>
-          </div>
-        </div>
-      </article>
-      <article class="t-card">
-        <span class="quote-mark" aria-hidden="true">&ldquo;</span>
-        <blockquote>"Just got done with the free live workshop, and man oh man did I learn a lot. I'm looking forward to getting my business up and running!"</blockquote>
-        <div class="testimonial-meta">
-          <img class="t-avatar" src="assets/testimonial-avatars/grid1iron.jpg" alt="" loading="lazy" decoding="async">
-          <div>
-            <p class="t-handle">@grid1iron</p>
             <p class="t-source">Instagram comment</p>
           </div>
         </div>
@@ -791,9 +755,9 @@ head.appendChild(script);
 <section class="register" aria-labelledby="final-cta-heading">
   <div class="wrap">
     <div class="section-head center">
-      <p class="kicker kicker--light">Save Your Seat</p>
-      <h2 id="final-cta-heading">2026 still has <span data-days-left>174</span> days left to design. What you do with them is the return you'll sign next April.</h2>
-      <p class="lede">Join me live and you'll know where your year may be overpaying and what to do while the year is still open.</p>
+      <p class="kicker kicker--light">Live on Zoom</p>
+      <h2 id="final-cta-heading">2026 still has <span data-days-left>174</span> days left. Some tax moves need to happen before December 31st.</h2>
+      <p class="lede">I'll show you what to check now, what has a year-end deadline, and what to ask your tax professional.</p>
       <p class="date-line"><strong data-ev="full">Saturday, July 11th @ 7 PM ET</strong></p>
       <div class="count count--mini" role="timer" aria-label="Countdown to the live workshop">
         <div class="count-card"><span class="num" data-cd="d">00</span><span class="lbl">Days</span></div>
@@ -802,7 +766,7 @@ head.appendChild(script);
         <div class="count-card"><span class="num" data-cd="s">00</span><span class="lbl">Seconds</span></div>
       </div>
       <div class="hero-cta">
-        <a class="btn" href="#register">Save your seat. Free Tax Strategy Workshop.
+        <a class="btn" href="#register">Reserve my spot
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
@@ -815,7 +779,7 @@ head.appendChild(script);
 <!-- ============ STICKY MOBILE CTA ============ -->
 <div class="sticky-cta" id="sticky-cta" aria-hidden="true">
   <p class="sc-date">Workshop date<strong data-ev="full">Saturday, July 11th @ 7 PM ET</strong></p>
-  <a class="btn" href="#register">Save Your Seat</a>
+  <a class="btn" href="#register">Save your seat</a>
 </div>
 
 <!-- ============ REGISTRATION POPUP ============ -->
@@ -823,8 +787,8 @@ head.appendChild(script);
   <div class="modal-backdrop" data-close-register tabindex="-1"></div>
   <div class="modal-panel">
     <button type="button" class="modal-close" data-close-register aria-label="Close registration form">&times;</button>
-    <h2 class="form-title" id="register-heading">Reserve your free seat</h2>
-    <p class="form-lede">Enter your details and we'll send your workshop link and reminder.</p>
+    <h2 class="form-title" id="register-heading">Where should we send your access link?</h2>
+    <p class="form-lede">We'll email it after you register.</p>
     <form id="register-form" action="#" method="post" novalidate>
       <div id="form-fields">
         <div class="field">
@@ -836,7 +800,7 @@ head.appendChild(script);
           <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" required>
         </div>
         <div class="field">
-          <label for="phone">Phone <span aria-hidden="true">(for your reminder)</span></label>
+          <label for="phone">Phone</label>
           <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="(555) 555-5555" required>
         </div>
         <div class="field field--hp" aria-hidden="true">
@@ -847,13 +811,13 @@ head.appendChild(script);
           <input type="checkbox" id="sms" name="sms_consent">
           <label for="sms">I agree to receive text reminders about this workshop from Legacy Investing Show. Message and data rates may apply. Reply STOP to opt out anytime.</label>
         </div>
-        <button type="submit" class="btn block">Save My Free Seat</button>
+        <button type="submit" class="btn block">Register Me</button>
         <p class="form-error" id="form-error" role="alert" hidden></p>
-        <p class="form-fine">Free to attend. No credit card required.</p>
+        <p class="form-fine">Live on Zoom. About 90 minutes. No credit card required.</p>
       </div>
       <div id="form-success" role="status" aria-live="polite" hidden>
-        <h3>You're registered.</h3>
-        <p>The workshop is live <strong data-ev="full">Saturday, July 11th @ 7 PM ET</strong>. Watch your inbox for your confirmation and access link.</p>
+        <h3>You're in.</h3>
+        <p>The workshop starts <strong data-ev="full">Saturday, July 11th @ 7 PM ET</strong>. Check your inbox for the confirmation and access link.</p>
       </div>
     </form>
   </div>
