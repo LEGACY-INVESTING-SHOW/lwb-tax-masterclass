@@ -2248,29 +2248,6 @@ window.fetch = async (request, init) => {
     
   
 
-<script>
-(function(){
-  const eventDate = new Date('2026-07-12T14:00:00-04:00');
-  const eventEnd = new Date(eventDate.getTime() + 2 * 60 * 60 * 1000);
-  function toCalendarTimestamp(date){
-    return date.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}Z$/, 'Z');
-  }
-  const title = 'Legacy Investing Show Tax Strategy Masterclass';
-  const details = 'Your webinar registration is confirmed. Join Preston Seo live on Zoom for the Legacy Investing Show tax strategy masterclass.';
-  const location = 'Online';
-  const googleUrl = new URL('https://calendar.google.com/calendar/render');
-  googleUrl.searchParams.set('action', 'TEMPLATE');
-  googleUrl.searchParams.set('text', title);
-  googleUrl.searchParams.set('details', details);
-  googleUrl.searchParams.set('location', location);
-  googleUrl.searchParams.set('dates', toCalendarTimestamp(eventDate) + '/' + toCalendarTimestamp(eventEnd));
-  document.querySelectorAll('a.custom-button').forEach(function(link){
-    link.setAttribute('href', googleUrl.toString());
-    link.setAttribute('target', '_blank');
-    link.setAttribute('rel', 'noopener');
-    link.removeAttribute('data-id');
-  });
-})();
-</script></body>
+<script src="https://cdn.addevent.com/libs/atc/1.6.1/atc.min.js" defer></script></body>
 </html>
 
