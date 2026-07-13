@@ -12,6 +12,18 @@ function normalizeString(value){
   return typeof value === 'string' ? value.trim() : '';
 }
 
+function queryParamFromUrl(url, name){
+  try {
+    return new URL(url).searchParams.get(name) || '';
+  } catch (error){
+    return '';
+  }
+}
+
+function trackingField(body, pageUrl, name){
+  return normalizeString(body[name]) || normalizeString(queryParamFromUrl(pageUrl, name));
+}
+
 async function readJsonBody(req){
   if (req.body && typeof req.body === 'object') return req.body;
   if (typeof req.body === 'string' && req.body.trim()){
@@ -51,6 +63,7 @@ module.exports = async function handler(req, res){
   const email = normalizeString(body.email);
   const phone = normalizeString(body.phone);
   const website = normalizeString(body.website);
+  const pageUrl = normalizeString(body.page_url);
 
   if (website){
     return json(res, 400, {ok: false, error: 'Spam check failed.'});
@@ -72,8 +85,14 @@ module.exports = async function handler(req, res){
     sms_consent: Boolean(body.sms_consent),
     event_name: normalizeString(body.event_name) || 'Legacy Investing Show Tax Strategy Workshop',
     event_datetime_et: normalizeString(body.event_datetime_et),
-    page_url: normalizeString(body.page_url),
+    page_url: pageUrl,
     submitted_at: normalizeString(body.submitted_at) || new Date().toISOString(),
+    utm_source: trackingField(body, pageUrl, 'utm_source'),
+    utm_medium: trackingField(body, pageUrl, 'utm_medium'),
+    utm_campaign: trackingField(body, pageUrl, 'utm_campaign'),
+    utm_term: trackingField(body, pageUrl, 'utm_term'),
+    utm_content: trackingField(body, pageUrl, 'utm_content'),
+    utm_id: trackingField(body, pageUrl, 'utm_id'),
     website: '',
     source: 'lwb-tax-masterclass',
     user_agent: normalizeString(req.headers['user-agent'])

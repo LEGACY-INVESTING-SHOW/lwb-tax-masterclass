@@ -966,6 +966,11 @@ setInterval(tick, 1000);
     if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
   });
 
+  const queryParams = new URLSearchParams(window.location.search);
+  function queryValue(name){
+    return queryParams.get(name) || '';
+  }
+
   form.addEventListener('submit', async function(e){
     e.preventDefault();
     clearError();
@@ -980,6 +985,12 @@ setInterval(tick, 1000);
       event_datetime_et: EV.full,
       page_url: window.location.href,
       submitted_at: new Date().toISOString(),
+      utm_source: queryValue('utm_source'),
+      utm_medium: queryValue('utm_medium'),
+      utm_campaign: queryValue('utm_campaign'),
+      utm_term: queryValue('utm_term'),
+      utm_content: queryValue('utm_content'),
+      utm_id: queryValue('utm_id'),
       website: form.elements.website.value.trim()
     };
 
@@ -997,7 +1008,7 @@ setInterval(tick, 1000);
         throw new Error(result.error || 'Something went wrong while saving your seat. Please try again.');
       }
 
-      window.location.href = '/taxseasonconfirmation';
+      window.location.href = '/taxseasonconfirmation' + window.location.search;
     } catch (err){
       showError(err && err.message ? err.message : 'Something went wrong while saving your seat. Please try again.');
     } finally {
