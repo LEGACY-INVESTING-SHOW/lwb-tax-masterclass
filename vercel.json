@@ -15,6 +15,14 @@
     {
       "source": "/taxseasonisnow/",
       "destination": "/index.html"
+    },
+    {
+      "source": "/future",
+      "destination": "/future.html"
+    },
+    {
+      "source": "/future/",
+      "destination": "/future.html"
     }
   ]
 }
