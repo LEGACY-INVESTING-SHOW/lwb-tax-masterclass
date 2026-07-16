@@ -418,102 +418,7 @@
     .close h2 { max-width: 14ch; margin: 0 auto 1.4rem; color: var(--paper-light); }
     .close p { max-width: 56ch; margin: 0 auto 2.1rem; color: #aebcaf; }
     .close .button { color: var(--forest-950); background: var(--gold-light); border-color: var(--gold); }
-    .checkout-card {
-      position: relative;
-      isolation: isolate;
-      max-width: 36rem;
-      margin: clamp(2rem, 5vw, 3.25rem) auto 0;
-      padding: clamp(1.1rem, 3vw, 1.5rem);
-      overflow: hidden;
-      color: var(--ink);
-      background:
-        linear-gradient(135deg, rgba(255, 255, 255, .96), rgba(242, 238, 228, .94)),
-        var(--paper-light);
-      border: 1px solid rgba(224, 201, 130, .48);
-      box-shadow: 0 30px 80px rgba(0, 0, 0, .34), inset 0 1px 0 rgba(255, 255, 255, .65);
-      text-align: left;
-    }
-
-    .checkout-card::before {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      width: 16rem;
-      aspect-ratio: 1;
-      top: -8rem;
-      right: -7rem;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(224, 201, 130, .52), rgba(224, 201, 130, 0) 68%);
-    }
-
-    .checkout-card__header {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 1rem;
-      align-items: end;
-      padding: .35rem .35rem 1.1rem;
-      border-bottom: 1px solid rgba(30, 33, 29, .12);
-    }
-
-    .checkout-card__kicker {
-      display: block;
-      margin-bottom: .45rem;
-      color: var(--gold);
-      font-size: .72rem;
-      font-weight: 800;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    .checkout-card h3 {
-      margin: 0;
-      color: var(--forest-950);
-      font-family: var(--sans);
-      font-size: clamp(1.35rem, 3vw, 1.85rem);
-      font-weight: 700;
-      letter-spacing: -.03em;
-      line-height: 1.05;
-    }
-
-    .checkout-card__price {
-      min-width: 8rem;
-      padding: .8rem .95rem;
-      color: var(--forest-950);
-      background: rgba(219, 229, 219, .72);
-      border: 1px solid rgba(45, 96, 73, .16);
-      text-align: right;
-    }
-
-    .checkout-card__price strong {
-      display: block;
-      font-family: var(--serif);
-      font-size: 1.65rem;
-      font-weight: 500;
-      line-height: .95;
-    }
-
-    .checkout-card__price span { color: var(--ink-soft); font-size: .75rem; font-weight: 700; }
-    .checkout-card__embed { padding: clamp(1rem, 3vw, 1.4rem) .35rem .35rem; }
-    .checkout-card__embed [data-whop-checkout-plan-id] { min-height: 4.25rem; }
-    .checkout-card__trust {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .55rem;
-      margin: 1rem .35rem .2rem;
-      padding: 0;
-      list-style: none;
-    }
-
-    .checkout-card__trust li {
-      padding: .42rem .65rem;
-      color: var(--forest-900);
-      background: rgba(45, 96, 73, .08);
-      border: 1px solid rgba(45, 96, 73, .12);
-      font-size: .73rem;
-      font-weight: 700;
-    }
-
-    .close__note { margin-top: 1rem; color: #7f8f81; font-size: .74rem; }
+    .close__note { margin-top: .9rem; color: #7f8f81; font-size: .74rem; }
 
     footer {
       padding: 2.5rem 0 3rem;
@@ -588,8 +493,6 @@
       .hero { padding-top: 3.7rem; }
       .actions { align-items: stretch; }
       .actions .button { width: 100%; }
-      .checkout-card__header { grid-template-columns: 1fr; }
-      .checkout-card__price { text-align: left; }
       .curriculum__foot { flex-direction: column; gap: .25rem; }
     }
 
@@ -788,30 +691,11 @@
         <p class="eyebrow">Your next step</p>
         <h2>Open the first lesson tonight.</h2>
         <p>$1,500 once, or from $125/month for 12 months with Splitit. Lifetime access either way.</p>
-        <div class="checkout-card" id="checkout" aria-label="Secure checkout">
-          <div class="checkout-card__header">
-            <div>
-              <span class="checkout-card__kicker">Secure checkout</span>
-              <h3>Legacy Wealth Blueprint Foundations</h3>
-            </div>
-            <div class="checkout-card__price" aria-label="$1,500 or payment plan">
-              <strong>$1,500</strong>
-              <span>or from $125/mo</span>
-            </div>
-          </div>
-          <div class="checkout-card__embed">
-            <div
-              data-whop-checkout-plan-id="plan_ThiSPZvUsDffb"
-              data-whop-checkout-theme="light"
-              data-whop-checkout-theme-accent-color="#3358d4"
-            ></div>
-          </div>
-          <ul class="checkout-card__trust" aria-label="Purchase details">
-            <li>Lifetime access</li>
-            <li>AI Advisor included</li>
-            <li>Splitit available</li>
-          </ul>
-        </div>
+        <div id="checkout"
+          data-whop-checkout-plan-id="plan_ThiSPZvUsDffb"
+          data-whop-checkout-theme="light"
+          data-whop-checkout-theme-accent-color="#3358d4"
+        ></div>
         <script async src="https://js.whop.com/static/checkout/loader.js"></script>
         <div class="close__note">Secure checkout · Access details sent after purchase</div>
       </div>
