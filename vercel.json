@@ -23,6 +23,14 @@
     {
       "source": "/future/",
       "destination": "/future.html"
+    },
+    {
+      "source": "/lwbfoundations",
+      "destination": "/lwbfoundations.html"
+    },
+    {
+      "source": "/lwbfoundations/",
+      "destination": "/lwbfoundations.html"
     }
   ]
 }
