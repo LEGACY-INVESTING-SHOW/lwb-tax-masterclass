@@ -123,18 +123,24 @@ head.appendChild(script);
   .skip-link:focus{top:12px}
   .announce{
     background:var(--green);color:var(--cream);text-align:center;
-    padding:11px 16px;font-size:.8rem;font-weight:500;
-    letter-spacing:.09em;text-transform:uppercase;
+    padding:20px 16px 18px;font-size:1.42rem;font-weight:500;
+    letter-spacing:.105em;text-transform:uppercase;line-height:1.35;
   }
-  .announce strong{color:var(--gold);font-weight:700}
+  .announce strong{display:block;color:#e3a02f;font-size:1.46rem;font-weight:700;letter-spacing:.065em}
+  .announce span{display:block;margin-top:4px;color:rgba(244,242,236,.95);font-size:1.36rem;letter-spacing:.12em}
 
   /* ---------- Hero ---------- */
-  .hero{padding:76px 0 92px;border-bottom:1px solid var(--line)}
-  .hero-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:72px;align-items:center}
-  .hero .sub{margin-top:22px;font-size:1.1rem;line-height:1.7;color:var(--ink);max-width:560px}
+  .hero{padding:66px 0 72px;border-bottom:1px solid var(--line);text-align:left}
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(340px,.82fr);gap:54px;align-items:center}
+  .hero h1{
+    max-width:720px;margin:0;
+    font-size:clamp(3rem,5.35vw,4.65rem);line-height:.98;font-weight:700;
+    letter-spacing:-.055em;color:#112019;
+  }
+  .hero .sub{margin:28px 0 0;font-size:1.34rem;line-height:1.64;color:#151916;max-width:650px}
   .date-line{margin-top:26px;font-size:1rem;color:var(--ink-soft)}
   .date-line strong{color:var(--ink);font-weight:700}
-  .hero-photo{max-width:560px;margin:0 auto}
+  .hero-photo{display:block;max-width:500px;margin:0 auto}
   .hero-photo img{width:100%;height:auto;border:1px solid rgba(21,33,27,.14);border-radius:8px;box-shadow:0 16px 34px rgba(21,33,27,.12)}
   .hero-cta{margin-top:34px}
   /* ---------- Countdown ---------- */
@@ -155,12 +161,15 @@ head.appendChild(script);
   .count--mini .count-card{min-width:60px;padding:9px 6px 7px;border-width:1px;border-radius:10px}
   .count--mini .num{font-size:1.15rem}
   .count--mini .lbl{font-size:.55rem;margin-top:4px}
-  .hero .date-line{margin-top:30px;font-size:1.12rem;color:var(--ink)}
-  .hero .count{gap:16px;margin-top:28px;flex-wrap:nowrap}
-  .hero .count-card{flex:1;min-width:0;padding:22px 8px 18px;border:3px solid var(--ink);border-radius:18px}
-  .hero .count-card .num{font-size:clamp(2rem,4vw,3rem);color:#141310}
-  .hero .count-card .lbl{margin-top:10px;font-size:.72rem;color:var(--ink-faint)}
-  .hero .hero-cta{margin-top:42px}
+  .hero .date-line{margin-top:34px;font-size:1.35rem;color:var(--ink)}
+  .hero .date-line strong{font-weight:700}
+  .hero .count{max-width:680px;margin:30px 0 0;gap:10px;flex-wrap:nowrap}
+  .hero .count-card{flex:1;min-width:0;padding:20px 8px 17px;border:3px solid var(--ink);border-radius:18px;background:transparent}
+  .hero .count-card .num{font-size:clamp(2.05rem,3.5vw,3rem);font-weight:700;color:#050605;line-height:.95}
+  .hero .count-card .lbl{margin-top:14px;font-size:.72rem;color:#7d8378;letter-spacing:.12em}
+  .hero .hero-cta{max-width:680px;margin:36px 0 0}
+  .hero .hero-cta .btn{width:100%;padding:23px 30px;font-size:1.34rem;border-radius:999px}
+  .hero .hero-cta .btn svg{width:21px;height:21px;stroke-width:2.2}
   .hero-proof{display:grid;grid-template-columns:repeat(3,1fr);grid-column:1/-1;margin-top:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .hero-proof span{padding:15px 14px;font-size:.75rem;line-height:1.45;color:var(--ink-soft);text-align:center}
   .hero-proof span+span{border-left:1px solid var(--line)}
@@ -420,7 +429,10 @@ head.appendChild(script);
     .pill-grid{grid-template-columns:repeat(2,1fr)}
   }
   @media (max-width:900px){
-    .hero-grid{grid-template-columns:1fr;gap:48px}
+    .hero{padding:56px 0 66px;text-align:center}
+    .hero-grid{grid-template-columns:1fr;gap:42px;max-width:760px}
+    .hero h1,.hero .sub,.hero .count,.hero .hero-cta{margin-left:auto;margin-right:auto}
+    .hero-photo{max-width:460px}
     .preston-grid{grid-template-columns:1fr;gap:56px}
     .comp-grid{grid-template-columns:1fr}
     .april-inner{grid-template-columns:1fr;gap:34px}
@@ -429,7 +441,13 @@ head.appendChild(script);
   }
   @media (max-width:720px){
     section{padding:64px 0}
-    .hero{padding:52px 0 68px}
+    .announce{padding:16px 12px 14px;font-size:1.05rem}
+    .announce strong{font-size:1.08rem}
+    .announce span{font-size:1rem}
+    .hero{padding:50px 0 56px}
+    .hero h1{font-size:clamp(2.75rem,10vw,4rem)}
+    .hero .sub{font-size:1.28rem;line-height:1.65}
+    .hero .date-line{font-size:1.32rem}
     .proof{padding:40px 0 44px}
     .section-head{margin-bottom:40px}
     .comp-card{padding:30px 24px}
@@ -449,19 +467,23 @@ head.appendChild(script);
     .hero-proof{grid-template-columns:1fr}
     .hero-proof span+span{border-left:0;border-top:1px solid var(--line)}
     /* Keep the primary action in the first mobile viewport without losing the editorial hero hierarchy. */
-    .announce{padding:8px 14px;font-size:.73rem;letter-spacing:.075em}
-    .hero{padding:36px 0 52px}
-    .hero h1{font-size:2.32rem;line-height:1}
-    .hero .sub{margin-top:16px;font-size:1rem;line-height:1.62}
-    .hero .date-line{margin-top:20px;font-size:1.02rem}
+    .announce{padding:12px 10px 11px;font-size:.78rem;letter-spacing:.06em}
+    .announce strong{font-size:.82rem;letter-spacing:.06em}
+    .announce span{font-size:.74rem;letter-spacing:.08em}
+    .hero{padding:38px 0 48px}
+    .hero h1{font-size:clamp(2.42rem,11.5vw,3.35rem);line-height:.98}
+    .hero .sub{margin-top:24px;font-size:1.05rem;line-height:1.68}
+    .hero .date-line{margin-top:28px;font-size:1.1rem}
+    .hero-photo{max-width:340px}
     .hero-cta .btn,.comp-cta .btn,.learn-cta .btn,.register .btn{width:100%}
     .count{gap:8px}
     .count-card{flex:1;min-width:0}
-    .hero .count{gap:6px;margin-top:18px}
-    .hero .count-card{padding:10px 3px 9px;border-width:2px;border-radius:11px}
-    .hero .count-card .num{font-size:clamp(1.45rem,6.5vw,1.85rem)}
-    .hero .count-card .lbl{margin-top:7px;font-size:.54rem;letter-spacing:.09em}
-    .hero .hero-cta{margin-top:22px}
+    .hero .count{gap:6px;margin-top:24px}
+    .hero .count-card{padding:13px 3px 11px;border-width:3px;border-radius:13px}
+    .hero .count-card .num{font-size:clamp(1.55rem,7.2vw,2rem)}
+    .hero .count-card .lbl{margin-top:9px;font-size:.52rem;letter-spacing:.09em}
+    .hero .hero-cta{margin-top:28px}
+    .hero .hero-cta .btn{padding:20px 22px;font-size:1.12rem}
     .pill-grid{grid-template-columns:1fr}
     .pill{font-size:.9rem;padding:14px 4px}
     .creds{grid-template-columns:1fr}
@@ -485,7 +507,7 @@ head.appendChild(script);
   @media (max-width:420px){
     .count-card{padding:11px 4px 9px}
     .count-card .num{font-size:1.4rem}
-    .hero{padding:40px 0 56px}
+    .hero{padding:34px 0 44px}
   }
 </style>
 </head>
@@ -495,7 +517,8 @@ head.appendChild(script);
 
 <!-- ============ 1. ANNOUNCEMENT BAR ============ -->
 <header class="announce">
-  <strong>PRESTON SEO — 8-FIGURE INVESTOR</strong><br>LIVE WORKSHOP · 6.5M+ FOLLOWERS
+  <strong>The Free Live Workshop For High-Earning Families</strong>
+  <span>Hosted By Preston Seo &mdash; 8-Figure Investor</span>
 </header>
 
 <main id="main-content">
@@ -504,9 +527,8 @@ head.appendChild(script);
 <section class="hero" aria-labelledby="hero-heading">
   <div class="wrap hero-grid">
     <div>
-      <p class="kicker">For families earning $150K+/yr</p>
-      <h1 id="hero-heading">Raising a family on a good income shouldn't feel <em class="accent">this tight.</em></h1>
-      <p class="sub">Join me live and I'll show you the 5-part system high-earning families use to cut their tax bill by $30K+, uncover six-figure blind spots, and build wealth they can protect... while the year is still open.</p>
+      <h1 id="hero-heading">Discover How You Can Protect Your Family's Future And Keep More Of What You Earn</h1>
+      <p class="sub">Join me live and I'll show you the 5-part system high-earning families use to cut their tax bill by $30K+ while the year is still open.</p>
       <p class="date-line"><strong data-ev="full">Thursday, July 23rd, 7 PM EST</strong></p>
       <div class="count" role="timer" aria-live="off" aria-label="Countdown to the live workshop">
         <div class="count-card"><span class="num" data-cd="d">00</span><span class="lbl">Days</span></div>
