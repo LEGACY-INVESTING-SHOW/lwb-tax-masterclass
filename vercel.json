@@ -31,6 +31,14 @@
     {
       "source": "/lwbfoundations/",
       "destination": "/lwbfoundations.html"
+    },
+    {
+      "source": "/tax-strategies",
+      "destination": "/tax-strategies.html"
+    },
+    {
+      "source": "/tax-strategies/",
+      "destination": "/tax-strategies.html"
     }
   ]
 }
