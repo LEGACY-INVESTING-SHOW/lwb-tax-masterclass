@@ -93,6 +93,12 @@ module.exports = async function handler(req, res){
     utm_term: trackingField(body, pageUrl, 'utm_term'),
     utm_content: trackingField(body, pageUrl, 'utm_content'),
     utm_id: trackingField(body, pageUrl, 'utm_id'),
+    fbclid: trackingField(body, pageUrl, 'fbclid'),
+    gclid: trackingField(body, pageUrl, 'gclid'),
+    gbraid: trackingField(body, pageUrl, 'gbraid'),
+    wbraid: trackingField(body, pageUrl, 'wbraid'),
+    fbp: normalizeString(body.fbp),
+    fbc: normalizeString(body.fbc),
     website: '',
     source: 'lwb-tax-masterclass',
     user_agent: normalizeString(req.headers['user-agent'])
