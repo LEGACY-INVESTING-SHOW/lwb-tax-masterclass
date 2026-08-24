@@ -39,6 +39,14 @@
     {
       "source": "/tax-strategies/",
       "destination": "/tax-strategies.html"
+    },
+    {
+      "source": "/taxstrategiesyt",
+      "destination": "/taxstrategiesyt.html"
+    },
+    {
+      "source": "/taxstrategiesyt/",
+      "destination": "/taxstrategiesyt.html"
     }
   ]
 }
