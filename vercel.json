@@ -9,6 +9,14 @@
       "destination": "/confirmation.html"
     },
     {
+      "source": "/taxstrategiesconfirmationyt",
+      "destination": "/taxstrategiesconfirmationyt.html"
+    },
+    {
+      "source": "/taxstrategiesconfirmationyt/",
+      "destination": "/taxstrategiesconfirmationyt.html"
+    },
+    {
       "source": "/taxseasonisnow",
       "destination": "/index.html"
     },
