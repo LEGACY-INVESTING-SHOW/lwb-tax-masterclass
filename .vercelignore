@@ -1,3 +1,4 @@
 docs/
 ANALYTICS.md
 analytics-posthog-setup.json
+.playwright-mcp/

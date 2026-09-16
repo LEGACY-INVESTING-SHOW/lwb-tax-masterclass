@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  var ANALYTICS_VERSION = '2026-09-16.2';
+  var ANALYTICS_VERSION = '2026-09-16.3';
   var POSTHOG_TOKEN = 'phc_rQffz3NncDqfmLpKUcrDvThjyT3brt4QRSxcPUT2pFsw';
   var POSTHOG_PROXY = '/lwb-events';
   var PRODUCTION_HOST = 'join.managemoney101.com';
@@ -157,7 +157,9 @@
     };
     ['source', 'medium', 'campaign', 'content', 'term', 'id'].forEach(function (name) {
       var value = params.get('utm_' + name);
-      if (value) touch['utm_' + name] = safeTag(value);
+      // Advertising platforms use long numeric IDs in UTM parameters.
+      // Keep those IDs intact; free-text labels still receive PII redaction.
+      if (value) touch['utm_' + name] = /^\d+$/.test(value) ? value.slice(0, 240) : safeTag(value);
     });
     return touch;
   }
@@ -167,6 +169,15 @@
     try { storage = window.localStorage; } catch (_) {}
     var stored = readJson(storage, ATTRIBUTION_KEY) || {};
     var touch = currentTouch();
+    // Repair an earlier redacted ID only when the current campaign proves its value.
+    ['first', 'last'].forEach(function (position) {
+      Object.keys(touch).forEach(function (key) {
+        if (/^utm_/.test(key) && /^\d+$/.test(touch[key]) && stored[position] &&
+            stored[position][key] === safeTag(touch[key])) {
+          stored[position][key] = touch[key];
+        }
+      });
+    });
     var hasUtm = Object.keys(touch).some(function (key) { return /^utm_/.test(key); });
     var externalReferrer = false;
     var sessionEntry = false;

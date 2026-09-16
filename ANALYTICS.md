@@ -66,4 +66,15 @@ PostHog references: [heatmaps](https://posthog.com/docs/toolbar/heatmaps), [repl
 - An attribution test preserved `last_landing_path=/taxseasonisnow` after navigation to the confirmation page with the same campaign parameters.
 - The temporary local server and headless browser were stopped.
 
-The shared-project tracker additionally passed a focused real PostHog SDK test for project token, proxy configuration, isolated persistence, built-in pageleave tagging, snapshot preservation, and mocked form events. Deployment and live ingestion checks are recorded below when complete.
+The shared-project tracker additionally passed a focused real PostHog SDK test for project token, proxy configuration, isolated persistence, built-in pageleave tagging, snapshot preservation, and mocked form events.
+
+## Production verification, September 16, 2026
+
+- Commit `371a5bc` deployed successfully through the repository's Vercel integration. The production alias serves the tracker on all seven routes, exactly once per page.
+- Real PostHog SDK configuration confirmed the shared project, webinar funnel label, heatmaps, active replay, masked inputs, and working first-party proxy. Confirmation-page Vimeo tracking loaded successfully.
+- PostHog received pageviews, CTA clicks, form events, scroll/section activity, and video progress. Non-test visitors and an accepted registration appeared in the webinar dashboard.
+- A tagged QA recording was retrieved from PostHog, and click coordinates were returned by the heatmaps API. No fake lead was submitted.
+- All nine webinar dashboard tiles and all four October tiles executed successfully with their respective funnel filters.
+- Saved heatmaps cover all seven webinar routes and the October landing page at mobile and desktop widths. Six screenshot previews completed; the two confirmation previews were still processing during verification. Heatmap collection is enabled independently of preview rendering.
+- A production attribution check identified long numeric advertising IDs being mistaken for phone numbers. Version `2026-09-16.3` preserves numeric UTM IDs while retaining free-text redaction and repairs matching stored IDs on subsequent tagged visits.
+- A real-browser check of that fix preserved 17-digit campaign/content IDs, repaired an older matching stored campaign without changing its first landing page, and continued redacting an email-shaped UTM value.
