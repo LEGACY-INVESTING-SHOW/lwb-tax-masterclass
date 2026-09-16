@@ -1,6 +1,18 @@
 {
   "rewrites": [
     {
+      "source": "/lwb-events/static/:path(.*)",
+      "destination": "https://us-assets.i.posthog.com/static/:path"
+    },
+    {
+      "source": "/lwb-events/array/:path(.*)",
+      "destination": "https://us-assets.i.posthog.com/array/:path"
+    },
+    {
+      "source": "/lwb-events/:path(.*)",
+      "destination": "https://us.i.posthog.com/:path"
+    },
+    {
       "source": "/taxseasonconfirmation",
       "destination": "/confirmation.html"
     },

@@ -1,0 +1,463 @@
+{
+  "status": "Use the existing shared PostHog project; keep this funnel separate with the funnel event property.",
+  "project_name": "Default project",
+  "project_id": 600066,
+  "project_usage": "Shared by October Challenge and Legacy Wealth Blueprint Webinar; no additional project or billing setup required.",
+  "funnel": "legacy_wealth_blueprint_webinar",
+  "dashboard": {
+    "name": "Legacy Wealth Blueprint Webinar",
+    "description": "Live page and campaign traffic, registration actions, failures and engagement. Excludes is_test=true. Tracking starts at deployment; no historical backfill.",
+    "pinned": true
+  },
+  "insights": [
+    {
+      "name": "Traffic by page",
+      "query": {
+        "kind": "InsightVizNode",
+        "source": {
+          "kind": "TrendsQuery",
+          "dateRange": {
+            "date_from": "-7d"
+          },
+          "interval": "day",
+          "properties": [
+            {
+              "type": "event",
+              "key": "funnel",
+              "operator": "exact",
+              "value": "legacy_wealth_blueprint_webinar"
+            },
+            {
+              "type": "event",
+              "key": "is_test",
+              "operator": "exact",
+              "value": "false"
+            }
+          ],
+          "series": [
+            {
+              "kind": "EventsNode",
+              "event": "$pageview",
+              "math": "total"
+            }
+          ],
+          "breakdownFilter": {
+            "breakdowns": [
+              {
+                "property": "canonical_path",
+                "type": "event"
+              }
+            ]
+          },
+          "trendsFilter": {
+            "display": "ActionsLineGraph",
+            "showLegend": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Traffic by campaign",
+      "query": {
+        "kind": "InsightVizNode",
+        "source": {
+          "kind": "TrendsQuery",
+          "dateRange": {
+            "date_from": "-7d"
+          },
+          "interval": "day",
+          "properties": [
+            {
+              "type": "event",
+              "key": "funnel",
+              "operator": "exact",
+              "value": "legacy_wealth_blueprint_webinar"
+            },
+            {
+              "type": "event",
+              "key": "is_test",
+              "operator": "exact",
+              "value": "false"
+            }
+          ],
+          "series": [
+            {
+              "kind": "EventsNode",
+              "event": "$pageview",
+              "math": "total"
+            }
+          ],
+          "breakdownFilter": {
+            "breakdowns": [
+              {
+                "property": "last_utm_campaign",
+                "type": "event"
+              }
+            ]
+          },
+          "trendsFilter": {
+            "display": "ActionsLineGraph",
+            "showLegend": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Traffic by source",
+      "query": {
+        "kind": "InsightVizNode",
+        "source": {
+          "kind": "TrendsQuery",
+          "dateRange": {
+            "date_from": "-7d"
+          },
+          "interval": "day",
+          "properties": [
+            {
+              "type": "event",
+              "key": "funnel",
+              "operator": "exact",
+              "value": "legacy_wealth_blueprint_webinar"
+            },
+            {
+              "type": "event",
+              "key": "is_test",
+              "operator": "exact",
+              "value": "false"
+            }
+          ],
+          "series": [
+            {
+              "kind": "EventsNode",
+              "event": "$pageview",
+              "math": "total"
+            }
+          ],
+          "breakdownFilter": {
+            "breakdowns": [
+              {
+                "property": "last_utm_source",
+                "type": "event"
+              }
+            ]
+          },
+          "trendsFilter": {
+            "display": "ActionsLineGraph",
+            "showLegend": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Registration actions",
+      "query": {
+        "kind": "InsightVizNode",
+        "source": {
+          "kind": "TrendsQuery",
+          "dateRange": {
+            "date_from": "-7d"
+          },
+          "interval": "day",
+          "properties": [
+            {
+              "type": "event",
+              "key": "funnel",
+              "operator": "exact",
+              "value": "legacy_wealth_blueprint_webinar"
+            },
+            {
+              "type": "event",
+              "key": "is_test",
+              "operator": "exact",
+              "value": "false"
+            }
+          ],
+          "series": [
+            {
+              "kind": "EventsNode",
+              "event": "registration_form_opened",
+              "math": "total"
+            },
+            {
+              "kind": "EventsNode",
+              "event": "registration_form_started",
+              "math": "total"
+            },
+            {
+              "kind": "EventsNode",
+              "event": "registration_form_submitted",
+              "math": "total"
+            },
+            {
+              "kind": "EventsNode",
+              "event": "registration_succeeded",
+              "math": "total"
+            }
+          ],
+          "trendsFilter": {
+            "display": "ActionsLineGraph",
+            "showLegend": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Registration failures",
+      "query": {
+        "kind": "InsightVizNode",
+        "source": {
+          "kind": "TrendsQuery",
+          "dateRange": {
+            "date_from": "-7d"
+          },
+          "interval": "day",
+          "properties": [
+            {
+              "type": "event",
+              "key": "funnel",
+              "operator": "exact",
+              "value": "legacy_wealth_blueprint_webinar"
+            },
+            {
+              "type": "event",
+              "key": "is_test",
+              "operator": "exact",
+              "value": "false"
+            }
+          ],
+          "series": [
+            {
+              "kind": "EventsNode",
+              "event": "registration_form_validation_failed",
+              "math": "total"
+            },
+            {
+              "kind": "EventsNode",
+              "event": "registration_failed",
+              "math": "total"
+            }
+          ],
+          "breakdownFilter": {
+            "breakdowns": [
+              {
+                "property": "canonical_path",
+                "type": "event"
+              }
+            ]
+          },
+          "trendsFilter": {
+            "display": "ActionsLineGraph",
+            "showLegend": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Video engagement",
+      "query": {
+        "kind": "InsightVizNode",
+        "source": {
+          "kind": "TrendsQuery",
+          "dateRange": {
+            "date_from": "-7d"
+          },
+          "interval": "day",
+          "properties": [
+            {
+              "type": "event",
+              "key": "funnel",
+              "operator": "exact",
+              "value": "legacy_wealth_blueprint_webinar"
+            },
+            {
+              "type": "event",
+              "key": "is_test",
+              "operator": "exact",
+              "value": "false"
+            }
+          ],
+          "series": [
+            {
+              "kind": "EventsNode",
+              "event": "video_started",
+              "math": "total"
+            },
+            {
+              "kind": "EventsNode",
+              "event": "video_progress",
+              "math": "total"
+            },
+            {
+              "kind": "EventsNode",
+              "event": "video_completed",
+              "math": "total"
+            }
+          ],
+          "trendsFilter": {
+            "display": "ActionsLineGraph",
+            "showLegend": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Calendar and outbound clicks",
+      "query": {
+        "kind": "InsightVizNode",
+        "source": {
+          "kind": "TrendsQuery",
+          "dateRange": {
+            "date_from": "-7d"
+          },
+          "interval": "day",
+          "properties": [
+            {
+              "type": "event",
+              "key": "funnel",
+              "operator": "exact",
+              "value": "legacy_wealth_blueprint_webinar"
+            },
+            {
+              "type": "event",
+              "key": "is_test",
+              "operator": "exact",
+              "value": "false"
+            }
+          ],
+          "series": [
+            {
+              "kind": "EventsNode",
+              "event": "calendar_link_clicked",
+              "math": "total"
+            },
+            {
+              "kind": "EventsNode",
+              "event": "outbound_link_clicked",
+              "math": "total"
+            }
+          ],
+          "trendsFilter": {
+            "display": "ActionsLineGraph",
+            "showLegend": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Page engagement",
+      "query": {
+        "kind": "InsightVizNode",
+        "source": {
+          "kind": "TrendsQuery",
+          "dateRange": {
+            "date_from": "-7d"
+          },
+          "interval": "day",
+          "properties": [
+            {
+              "type": "event",
+              "key": "funnel",
+              "operator": "exact",
+              "value": "legacy_wealth_blueprint_webinar"
+            },
+            {
+              "type": "event",
+              "key": "is_test",
+              "operator": "exact",
+              "value": "false"
+            }
+          ],
+          "series": [
+            {
+              "kind": "EventsNode",
+              "event": "scroll_milestone_reached",
+              "math": "total"
+            },
+            {
+              "kind": "EventsNode",
+              "event": "section_viewed",
+              "math": "total"
+            }
+          ],
+          "breakdownFilter": {
+            "breakdowns": [
+              {
+                "property": "canonical_path",
+                "type": "event"
+              }
+            ]
+          },
+          "trendsFilter": {
+            "display": "ActionsLineGraph",
+            "showLegend": true
+          }
+        }
+      }
+    }
+  ],
+  "heatmaps": [
+    {
+      "name": "taxseasonisnow",
+      "url": "https://join.managemoney101.com/taxseasonisnow",
+      "widths": [
+        390,
+        1440
+      ],
+      "type": "screenshot"
+    },
+    {
+      "name": "future",
+      "url": "https://join.managemoney101.com/future",
+      "widths": [
+        390,
+        1440
+      ],
+      "type": "screenshot"
+    },
+    {
+      "name": "tax-strategies",
+      "url": "https://join.managemoney101.com/tax-strategies",
+      "widths": [
+        390,
+        1440
+      ],
+      "type": "screenshot"
+    },
+    {
+      "name": "tax-strategies-yt",
+      "url": "https://join.managemoney101.com/tax-strategies-yt",
+      "widths": [
+        390,
+        1440
+      ],
+      "type": "screenshot"
+    },
+    {
+      "name": "taxseasonconfirmation",
+      "url": "https://join.managemoney101.com/taxseasonconfirmation",
+      "widths": [
+        390,
+        1440
+      ],
+      "type": "screenshot"
+    },
+    {
+      "name": "taxstrategiesconfirmationyt",
+      "url": "https://join.managemoney101.com/taxstrategiesconfirmationyt",
+      "widths": [
+        390,
+        1440
+      ],
+      "type": "screenshot"
+    },
+    {
+      "name": "lwbfoundations",
+      "url": "https://join.managemoney101.com/lwbfoundations",
+      "widths": [
+        390,
+        1440
+      ],
+      "type": "screenshot"
+    }
+  ]
+}

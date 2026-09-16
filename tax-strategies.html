@@ -950,6 +950,23 @@ setInterval(tick, 1000);
   const submitLabel = submitBtn ? submitBtn.textContent : '';
   let lastFocus = null;
 
+  function emitRegistrationStage(stage, detail){
+    try {
+      window.dispatchEvent(new CustomEvent('lwb:registration', {
+        detail: Object.assign({stage: stage}, detail || {})
+      }));
+    } catch (error){}
+  }
+
+  let registrationStarted = false;
+  function markRegistrationStarted(){
+    if (registrationStarted) return;
+    registrationStarted = true;
+    emitRegistrationStage('started');
+  }
+  form.addEventListener('input', markRegistrationStarted, true);
+  form.addEventListener('change', markRegistrationStarted, true);
+
   function clearError(){
     if (!formError) return;
     formError.hidden = true;
@@ -984,6 +1001,7 @@ setInterval(tick, 1000);
     modal.hidden = false;
     modal.classList.add('is-open');
     document.body.classList.add('modal-open');
+    emitRegistrationStage('opened');
     const focusEl = form.querySelector('input, button, [href], [tabindex]:not([tabindex="-1"])');
     if (focusEl) focusEl.focus();
   }
@@ -1048,7 +1066,15 @@ setInterval(tick, 1000);
   form.addEventListener('submit', async function(e){
     e.preventDefault();
     clearError();
-    if (!form.checkValidity()){ form.reportValidity(); return; }
+    if (!form.checkValidity()){
+      emitRegistrationStage('validation_failed', {
+        invalid_fields: Array.from(form.elements).filter(function(field){
+          return typeof field.checkValidity === 'function' && !field.checkValidity();
+        }).map(function(field){ return field.name || field.id || 'unknown'; })
+      });
+      form.reportValidity();
+      return;
+    }
 
     const payload = {
       first_name: form.elements.first_name.value.trim(),
@@ -1074,7 +1100,9 @@ setInterval(tick, 1000);
       website: form.elements.website.value.trim()
     };
 
+    emitRegistrationStage('submitted');
     setSubmitting(true);
+    let failureType = 'network_error';
 
     try{
       const response = await fetch('/api/register', {
@@ -1085,11 +1113,14 @@ setInterval(tick, 1000);
       const result = await response.json().catch(function(){ return {ok:false}; });
 
       if (!response.ok || !result.ok){
+        failureType = 'api_error';
         throw new Error(result.error || 'Something went wrong while saving your seat. Please try again.');
       }
 
+      emitRegistrationStage('succeeded');
       window.location.href = '/taxseasonconfirmation' + window.location.search;
     } catch (err){
+      emitRegistrationStage('failed', {failure_type: failureType});
       showError(err && err.message ? err.message : 'Something went wrong while saving your seat. Please try again.');
     } finally {
       setSubmitting(false);
@@ -1097,5 +1128,6 @@ setInterval(tick, 1000);
   });
 })();
 </script>
+<script src="/assets/js/webinar-analytics.js" defer></script>
 </body>
 </html>
