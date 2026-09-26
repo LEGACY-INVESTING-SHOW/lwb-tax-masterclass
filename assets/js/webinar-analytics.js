@@ -23,6 +23,8 @@
     '/future.html': { canonical: '/future', step: 'registration_landing', page: 'webinar_registration', variant: 'family_wealth_future' },
     '/tax-strategies': { canonical: '/tax-strategies', step: 'registration_landing', page: 'webinar_registration', variant: 'tax_strategies' },
     '/tax-strategies.html': { canonical: '/tax-strategies', step: 'registration_landing', page: 'webinar_registration', variant: 'tax_strategies' },
+    '/tax-strategies-v2': { canonical: '/tax-strategies-v2', step: 'registration_landing', page: 'webinar_registration', variant: 'tax_strategies_v2' },
+    '/tax-strategies-v2.html': { canonical: '/tax-strategies-v2', step: 'registration_landing', page: 'webinar_registration', variant: 'tax_strategies_v2' },
     '/tax-strategies-yt': { canonical: '/tax-strategies-yt', step: 'registration_landing', page: 'webinar_registration', variant: 'tax_strategies_youtube' },
     '/taxstrategiesyt': { canonical: '/tax-strategies-yt', step: 'registration_landing', page: 'webinar_registration', variant: 'tax_strategies_youtube' },
     '/taxstrategiesyt.html': { canonical: '/tax-strategies-yt', step: 'registration_landing', page: 'webinar_registration', variant: 'tax_strategies_youtube' },
