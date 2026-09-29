@@ -177,6 +177,13 @@ head.appendChild(script);
   .hero-proof{display:grid;grid-template-columns:repeat(3,1fr);grid-column:1/-1;margin-top:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .hero-proof span{padding:15px 14px;font-size:.75rem;line-height:1.45;color:var(--ink-soft);text-align:center}
   .hero-proof span+span{border-left:1px solid var(--line)}
+  .hero-when{margin:0 auto 18px;line-height:1.35}
+  .hero-free{display:block;font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green)}
+  .hero-when strong{display:block;margin-top:4px;font-size:1.12rem;font-weight:700;color:var(--ink)}
+  .hero-trust{margin-top:12px;font-size:.88rem;line-height:1.4;color:var(--ink-soft)}
+  .hero-trust-stars{color:#00b67a;letter-spacing:.06em}
+  .hero-trust .nw{white-space:nowrap}
+  .hero .hero-cta + .count{margin-top:26px}
 
   /* ---------- Proof strip ---------- */
   .proof{background:var(--card);padding:80px 0;border-bottom:1px solid var(--line)}
@@ -404,15 +411,17 @@ head.appendChild(script);
   .sticky-cta{
     position:fixed;left:0;right:0;bottom:0;z-index:900;
     display:none;align-items:center;justify-content:space-between;gap:14px;
-    background:var(--cream);
-    padding:12px 18px calc(12px + env(safe-area-inset-bottom));
-    box-shadow:0 -8px 20px rgba(11,47,37,.14);
+    background:var(--green);
+    border-top:3px solid var(--cta);
+    padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+    box-shadow:0 -10px 26px rgba(11,47,37,.28);
   }
   .sticky-cta.is-on{display:flex}
   @media (min-width:901px){.sticky-cta.is-on{display:none}}
-  .sc-date{min-width:0;font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);line-height:1.45}
-  .sc-date strong{display:block;color:var(--ink);font-size:.82rem;font-weight:600;letter-spacing:0;text-transform:none}
-  .sticky-cta .btn{flex-shrink:0}
+  .sc-date{min-width:0;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green-lite);line-height:1.45}
+  .sc-date strong{display:block;color:var(--cream);font-size:.82rem;font-weight:600;letter-spacing:0;text-transform:none}
+  .sticky-cta .btn{flex-shrink:0;padding:14px 18px;font-size:1rem;font-weight:700}
+  .sticky-cta .btn svg{width:16px;height:16px}
 
   /* ---------- Footer ---------- */
   footer{background:#0c0c0b;color:var(--bone-faint);padding:68px 0 56px}
@@ -529,19 +538,20 @@ head.appendChild(script);
 <section class="hero" aria-labelledby="hero-heading">
   <div class="wrap hero-grid">
     <div class="hero-copy">
+      <p class="hero-when"><span class="hero-free">Free live workshop on Zoom</span><strong data-ev="full">Sunday, Sept 20th, 2 PM EST</strong></p>
       <h1 id="hero-heading">The 5 Tax Strategies That Could Cut Your Tax Bill By $30K+ &amp; Add $50K To Your Investment Portfolio</h1>
-      <p class="sub">Discover the exact system I used to get a <strong>$46 refund from the IRS</strong> <strong>the same year I made $500K</strong><br>(results most CPAs said were impossible)</p>
-      <p class="date-line"><strong data-ev="full">Sunday, Sept 20th, 2 PM EST</strong></p>
+      <p class="sub">A simple plan to lower your taxes before December 31st and invest what you save.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#register">Register Now
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <p class="hero-trust"><span class="hero-trust-stars" aria-hidden="true">★★★★★</span> <span class="nw">Rated Excellent on Trustpilot</span> &middot; <span class="nw">6.5M+ followers</span></p>
+      </div>
       <div class="count" role="timer" aria-live="off" aria-label="Countdown to the live workshop">
         <div class="count-card"><span class="num" data-cd="d">00</span><span class="lbl">Days</span></div>
         <div class="count-card"><span class="num" data-cd="h">00</span><span class="lbl">Hours</span></div>
         <div class="count-card"><span class="num" data-cd="m">00</span><span class="lbl">Minutes</span></div>
         <div class="count-card"><span class="num" data-cd="s">00</span><span class="lbl">Seconds</span></div>
-      </div>
-      <div class="hero-cta">
-        <a class="btn" href="#register">Register Now
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
       </div>
     </div>
     <figure class="hero-photo">
@@ -586,35 +596,7 @@ head.appendChild(script);
   </div>
 </section>
 
-<!-- ============ 4. THE MIRROR ============ -->
-<section class="compare" aria-labelledby="mirror-heading">
-  <div class="wrap-narrow">
-    <p class="kicker">Does This Sound Familiar?</p>
-    <h2 id="mirror-heading">Earning more than ever, but keeping less than you should?</h2>
-    <p class="lede">You've spent your career earning good money, but most of your financial decisions still run on autopilot. Your withholding hasn't changed since your first day on the job, the 401(k) gets its automatic percentage, your savings barely earn anything, and your entire tax strategy is one rushed CPA meeting in April.</p>
-    <p class="lede">You've read the articles. You've saved the videos. Maybe you even asked your CPA about a strategy once. They said, “sure, we could look at that,” but filing season came and the conversation died.</p>
-    <p class="lede">Your CPA may be doing exactly what you hired them to do: filing an accurate return. But an accurate return can still document an overpayment if no one planned during the year.</p>
-    <div class="comp-cta"><a class="btn" href="#register">See the 5-part system</a></div>
-  </div>
-</section>
-
-<!-- ============ 4b. THE APRIL PROBLEM ============ -->
-<section class="april" aria-labelledby="april-heading">
-  <div class="april-inner">
-    <div>
-      <p class="kicker kicker--light">Before Filing Season</p>
-      <p class="april-pull">Once the year ends, many tax moves are no longer available.</p>
-    </div>
-    <div>
-      <h2 id="april-heading">Why <span data-current-month>July</span> matters</h2>
-      <p>Some tax moves must be completed by December 31st. Others have earlier deadlines. These can include how you structure side income, which retirement accounts you fund, and deductions that require advance documentation.</p>
-      <p>That's why waiting until April is so limiting. By then your CPA is looking at income already earned, money already spent, and tax already withheld. Most of their job is to report what happened.</p>
-      <p>Starting in <span data-current-month>July</span> gives you time to ask questions, set things up, and finish the paperwork before those deadlines.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 5. WHAT YOU'LL LEARN ============ -->
+<!-- ============ 5. WHAT YOU'LL LEARN (moved up) ============ -->
 <section aria-labelledby="learn-heading">
   <div class="wrap">
     <div class="section-head">
@@ -667,7 +649,7 @@ head.appendChild(script);
   </div>
 </section>
 
-<!-- ============ 6. MEET PRESTON SEO ============ -->
+<!-- ============ 6. MEET PRESTON SEO (trimmed, moved up) ============ -->
 <section class="preston" aria-labelledby="preston-heading">
   <div class="wrap">
     <div class="preston-grid">
@@ -675,11 +657,10 @@ head.appendChild(script);
         <p class="kicker">Meet Preston Seo</p>
         <h2 id="preston-heading">If we haven't met, my name's Preston.</h2>
         <p class="preston-sub">8-Figure Investor, Legacy Investing Show</p>
-        <p>I grew up in a <strong>first-generation immigrant family</strong>. My parents worked constantly and saved what they could, but nobody ever sat us down and explained how money really works in this country.</p>
-        <p>I got good grades and found a good job, just like you're supposed to. Then I landed in corporate sales and <strong>hated almost every day of it</strong>. The paychecks grew, the tax bill grew faster, and the life I wanted kept getting pushed back another year.</p>
+        <p>I grew up in a <strong>first-generation immigrant family</strong>. Nobody ever explained how money really works in this country. I got good grades, landed in corporate sales, and <strong>hated almost every day of it</strong>. The paychecks grew, and the tax bill grew faster.</p>
         <p>So I studied the tax code and the investors who use it well. Over time, I built a <strong>$15M+ real estate portfolio from scratch</strong>. By 28, my wife and I had <strong>both quit our jobs</strong>. One year, I made $500K and got a <strong>$46 federal refund</strong>. That was my result. Yours will depend on your own tax situation.</p>
         <p>Since then I've reviewed <strong>over a thousand tax returns</strong> from high earners. The biggest gaps usually came from decisions that were never made during the year, not math errors on the return.</p>
-        <p>Today we have <strong>two little boys</strong>. They're why I care so much about making the plan before my CPA files the return. This workshop is the plain-English version of what I wish someone had handed my parents 30 years ago.</p>
+        <p>Today we have <strong>two little boys</strong>. This workshop is the plain-English version of what I wish someone had handed my parents 30 years ago.</p>
         <p class="sig">Preston Seo</p>
         <p class="sig-title">The Legacy Investing Show</p>
         <a class="btn" href="#register">Join me for the workshop
@@ -706,6 +687,17 @@ head.appendChild(script);
         <span><strong>$500K+ in personal tax savings</strong> over the years</span>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ============ 7. WHY NOW (short merge of "The Mirror" and "The April Problem") ============ -->
+<section class="compare" aria-labelledby="mirror-heading">
+  <div class="wrap-narrow">
+    <p class="kicker">Does This Sound Familiar?</p>
+    <h2 id="mirror-heading">Earning more than ever, but keeping less than you should?</h2>
+    <p class="lede">Your CPA may be doing exactly what you hired them to do: filing an accurate return. But an accurate return can still document an overpayment if no one planned during the year.</p>
+    <p class="lede">Some tax moves must be completed by December 31st. Others have earlier deadlines. By April, most of your CPA's job is to report what already happened. Starting in <span data-current-month>July</span> gives you time to set things up before those deadlines.</p>
+    <div class="comp-cta"><a class="btn" href="#register">See the 5-part system</a></div>
   </div>
 </section>
 
@@ -789,8 +781,10 @@ head.appendChild(script);
 
 <!-- ============ STICKY MOBILE CTA ============ -->
 <div class="sticky-cta" id="sticky-cta" aria-hidden="true">
-  <p class="sc-date"><strong data-ev="full">Sunday, Sept 20th, 2 PM EST</strong></p>
-  <a class="btn" href="#register">Save your seat</a>
+  <p class="sc-date">Free live on Zoom<strong data-ev="full">Sunday, Sept 20th, 2 PM EST</strong></p>
+  <a class="btn" href="#register">Register Now
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
 </div>
 
 <!-- ============ REGISTRATION POPUP ============ -->
