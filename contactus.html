@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us | Legacy Investing Show</title>
+  <meta name="description" content="Contact the Legacy Investing Show team by email.">
+  <link rel="canonical" href="https://join.managemoney101.com/contactus">
+  <link rel="icon" href="https://www.managemoney101.com/favicon-dark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #f4f2ec;
+      --ink: #15211b;
+      --ink-soft: #4d574f;
+      --green: #0e3b2e;
+      --gold: #d5b35f;
+      --gold-hover: #c8a44f;
+      --line: #d8d2c4;
+    }
+    * { box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      color: var(--ink);
+      background: radial-gradient(ellipse at top, #fbfaf6, var(--cream) 72%);
+      font: 17px/1.65 'Instrument Sans', sans-serif;
+      text-align: center;
+    }
+    header { padding: 28px 24px; border-top: 4px solid var(--gold); }
+    .brand { color: var(--green); font-size: 13px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    main { flex: 1; display: grid; place-items: center; padding: 48px 24px 100px; }
+    .contact { width: min(100%, 760px); }
+    h1 { margin: 0 0 24px; font-size: clamp(42px, 7vw, 72px); font-weight: 700; line-height: 1.05; letter-spacing: -.04em; }
+    p { margin: 0 0 28px; color: var(--ink-soft); font-size: 21px; }
+    .email {
+      display: inline-block;
+      max-width: 100%;
+      padding: 18px 28px;
+      border-radius: 0;
+      color: var(--ink);
+      background: var(--gold);
+      font-size: clamp(16px, 3vw, 21px);
+      font-weight: 600;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+      transition: background .18s ease;
+    }
+    .email:hover { background: var(--gold-hover); }
+    a:focus-visible { outline: 3px solid var(--green); outline-offset: 5px; }
+    footer { padding: 24px; border-top: 1px solid var(--line); font-size: 13px; color: var(--ink-soft); }
+    footer a { color: inherit; text-underline-offset: 3px; }
+    @media (prefers-reduced-motion: reduce) { .email { transition: none; } }
+  </style>
+</head>
+<body>
+  <header><div class="brand">Legacy Investing Show</div></header>
+  <main>
+    <section class="contact" aria-labelledby="contact-title">
+      <h1 id="contact-title">Contact Us</h1>
+      <p>Email us at</p>
+      <a class="email" href="mailto:preston@legacyinvestinghow.com">preston@legacyinvestinghow.com</a>
+    </section>
+  </main>
+  <footer><a href="https://www.legacyinvestingshow.com/terms" target="_blank" rel="noopener">Privacy Policy</a></footer>
+</body>
+</html>
