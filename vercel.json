@@ -1,6 +1,22 @@
 {
   "rewrites": [
     {
+      "source": "/tax-strategies-confirmation-whop",
+      "destination": "/tax-strategies-confirmation-whop.html"
+    },
+    {
+      "source": "/tax-strategies-confirmation-whop/",
+      "destination": "/tax-strategies-confirmation-whop.html"
+    },
+    {
+      "source": "/tax-strategies-whop",
+      "destination": "/tax-strategies-whop.html"
+    },
+    {
+      "source": "/tax-strategies-whop/",
+      "destination": "/tax-strategies-whop.html"
+    },
+    {
       "source": "/contactus",
       "destination": "/contactus.html"
     },

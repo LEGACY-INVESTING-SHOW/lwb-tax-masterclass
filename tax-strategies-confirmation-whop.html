@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>You're registered | Free Live Tax Workshop with Preston Seo</title>
+  <meta name="description" content="Your seat is saved. Add the free live tax workshop to your calendar and watch these two short videos before the workshop.">
+  <link rel="icon" href="https://www.managemoney101.com/favicon-dark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #f4f2ec;
+      --card: #fbfaf6;
+      --ink: #15211b;
+      --ink-soft: #4d574f;
+      --green: #0e3b2e;
+      --green-dark: #0b2f25;
+      --cta: #d5b35f;
+      --cta-hover: #c8a44f;
+      --line: #d8d2c4;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--cream); color: var(--ink); text-align: center; font: 17px/1.65 'Instrument Sans', sans-serif; }
+    h1, h2, h3, p { margin: 0; }
+    h1, h2, h3 { font-weight: 700; letter-spacing: -.035em; }
+    a { color: inherit; text-underline-offset: 3px; }
+    ::selection { background: #d5b35f66; color: var(--ink); }
+    h1, h2 { text-wrap: balance; }
+    .wrap { width: min(100% - 48px, 880px); margin-inline: auto; }
+    .hero { padding: 72px 0 64px; text-align: center; background: radial-gradient(ellipse at top, #fbfaf6 0%, var(--cream) 72%); }
+    .status { display: inline-flex; align-items: center; gap: 9px; color: var(--green); font-size: 15px; font-weight: 600; line-height: 1.4; }
+    .status-icon { display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: var(--green); color: var(--card); flex: 0 0 auto; }
+    .status-icon svg { width: 12px; height: 12px; }
+    h1 { font-size: clamp(2.5rem, 5.4vw, 4.5rem); line-height: 1.04; margin: 24px -20px 28px; }
+    .intro { max-width: 650px; margin: 0 auto; font-size: clamp(18px, 2vw, 21px); line-height: 1.55; color: var(--ink-soft); }
+    .event-date { margin-top: 32px; font-size: clamp(18px, 2.4vw, 23px); font-weight: 700; }
+    .countdown { display: flex; justify-content: center; margin: 28px 0 14px; }
+    .time-box { min-width: 120px; padding: 0 28px; }
+    .time-box + .time-box { border-left: 1px solid var(--line); }
+    .time-box strong { display: block; font-size: 52px; font-weight: 700; line-height: 1; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+    .time-box span { display: block; margin-top: 10px; color: var(--ink-soft); font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+    .local-time { min-height: 28px; color: var(--ink-soft); font-size: 16px; }
+    .calendar-action { margin-top: 24px; }
+    .addeventatc.custom-button {
+      display: inline-flex !important; align-items: center; justify-content: center; gap: 12px;
+      position: relative !important; background: var(--cta) !important; color: var(--ink) !important;
+      padding: 17px 32px !important; min-height: 60px; min-width: 280px;
+      border: 0 !important; border-radius: 6px !important; box-shadow: none !important;
+      font: 700 18px/1.3 'Instrument Sans', sans-serif !important;
+      text-align: center; text-decoration: none; cursor: pointer;
+      transition: background .18s ease, transform .18s ease;
+    }
+    .addeventatc.custom-button:hover { background: var(--cta-hover) !important; transform: translateY(-2px); }
+    .addeventatc.custom-button:focus-visible, summary:focus-visible, a:focus-visible { outline: 3px solid var(--green); outline-offset: 5px; }
+    .calendar-icon { width: 22px; height: 22px; flex: 0 0 auto; }
+    .addeventatc.custom-button .addeventatc_icon, .addeventatc.custom-button .addevent-icon { display: none !important; }
+    .calendar-note { margin-top: 12px; font-size: 14px; color: var(--ink-soft); }
+    .section { padding: 64px 0; }
+    #video-1 { border-top: 1px solid var(--line); }
+    #video-2 { padding-top: 0; }
+    #workshop-preparation { background: radial-gradient(ellipse at top, #194b39, var(--green) 70%); color: var(--card); }
+    #workshop-preparation .prep-list li { border-color: #ffffff24; color: #dbe4dd; }
+    #workshop-preparation .prep-list strong { color: var(--card); }
+    #workshop-preparation .prep-list li::before { color: var(--cta); }
+    #questions { background: var(--card); }
+    .section-tag { display: block; color: var(--green); font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; margin-bottom: 12px; }
+    h2 { font-size: clamp(28px, 3.6vw, 39px); line-height: 1.12; }
+    .video-frame { position: relative; aspect-ratio: 16 / 9; margin-top: 26px; overflow: hidden; border-radius: 8px; background: var(--green-dark); box-shadow: 0 14px 36px #15211b14; }
+    .video-frame iframe { display: block; width: 100%; height: 100%; border: 0; }
+    .calendar-repeat { text-align: center; padding: 0 0 64px; }
+    .calendar-repeat p { font-weight: 600; font-size: 19px; }
+    .prep-list { list-style: none; max-width: 720px; padding: 0; margin: 36px auto 0; text-align: left; counter-reset: prep; }
+    .prep-list li { position: relative; padding: 24px 0 24px 60px; border-top: 1px solid var(--line); color: var(--ink-soft); counter-increment: prep; }
+    .prep-list li::before { content: '0' counter(prep); position: absolute; left: 0; top: 24px; color: var(--green); font-size: 17px; font-weight: 700; font-variant-numeric: tabular-nums; }
+    .prep-list strong { color: var(--ink); }
+    .faq-list { max-width: 720px; margin: 36px auto 0; text-align: left; }
+    details { border-top: 1px solid var(--line); }
+    details:last-child { border-bottom: 1px solid var(--line); }
+    summary { position: relative; padding: 22px 44px 22px 0; list-style: none; font-weight: 600; font-size: 19px; line-height: 1.4; cursor: pointer; }
+    summary::-webkit-details-marker { display: none; }
+    summary:hover { color: var(--green); }
+    summary::after { content: '+'; position: absolute; right: 4px; top: 18px; font-size: 26px; color: var(--green); font-weight: 400; }
+    details[open] summary::after { content: '\2212'; }
+    .answer { padding: 0 44px 24px 0; color: var(--ink-soft); }
+    .answer p + p { margin-top: 12px; }
+    footer { padding: 40px 0; background: #eae7df; color: var(--ink-soft); font-size: 12px; line-height: 1.7; }
+    footer p + p { margin-top: 16px; }
+    .footer-links { display: flex; justify-content: center; gap: 24px; margin-top: 20px; font-size: 13px; }
+    @media (max-width: 600px) {
+      .wrap { width: calc(100% - 36px); }
+      .hero { padding: 42px 0; }
+      .status { font-size: 13px; }
+      .prep-list li { padding-left: 44px; }
+      h1 { margin: 20px 0 22px; font-size: clamp(2.2rem, 8.5vw, 3rem); }
+      .event-date { font-size: 18px; margin-top: 26px; }
+      .time-box { min-width: 0; padding: 0 22px; }
+      .time-box strong { font-size: 40px; }
+      .section { padding: 42px 0; }
+      .calendar-repeat { padding-bottom: 42px; }
+      .addeventatc.custom-button { min-width: min(280px, 100%); padding: 17px 22px !important; }
+      summary { font-size: 17px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .addeventatc.custom-button { transition: none; } }
+  </style>
+  <script>
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "rle5yftbjl");
+  </script>
+  <!-- LWB Meta Pixel: Registration Confirmation -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,"script",
+    "https://connect.facebook.net/en_US/fbevents.js");
+    fbq("init", "489941607383296");
+    fbq("track", "PageView");
+    fbq("track", "Lead");
+  </script>
+  <script>
+    var head = document.head;
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = "https://t.managemoney101.com/v1/lst/universal-script?ph=99701b257ae8a5117ba5d7b516261da603bc86a49c0c42f398c619e251026c05&tag=!clicked&ref_url=" + encodeURI(document.URL);
+    head.appendChild(script);
+  </script>
+</head>
+<body>
+  <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=489941607383296&ev=PageView&noscript=1"></noscript>
+  <main>
+    <header class="hero" id="calendar">
+      <div class="wrap">
+        <p class="status"><span class="status-icon" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2 5 8.5l4.5-5"/></svg></span>You're registered for the free live tax workshop.</p>
+        <h1>Your seat is saved.<br>Now put it on your calendar.</h1>
+        <p class="intro">The workshop is live on Zoom and there's no replay, so add it to your calendar before you do anything else.</p>
+        <p class="event-date"><time datetime="2026-10-13T19:00:00-04:00">Tuesday, October 13th &middot; 7:00 PM EST</time></p>
+        <div class="countdown" role="timer" aria-label="Time until the workshop">
+          <div class="time-box"><strong id="days">--</strong><span>Days</span></div>
+          <div class="time-box"><strong id="hours">--</strong><span>Hours</span></div>
+          <div class="time-box"><strong id="minutes">--</strong><span>Minutes</span></div>
+        </div>
+        <p class="local-time" id="local-time"></p>
+        <div class="calendar-action">
+          <a title="Add to Calendar" class="addeventatc custom-button" data-id="4bw39x1lvh6v" href="https://www.addevent.com/event/4bw39x1lvh6v" target="_blank" rel="noopener">
+            <svg class="calendar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 5h14v16H5zM8 2v6M16 2v6M5 10h14M8 14h3M13 14h3M8 17h3"/></svg>
+            Add to Calendar
+          </a>
+        </div>
+        <p class="calendar-note">Save your reminder, then watch the two short videos below.</p>
+      </div>
+    </header>
+
+      <section class="section" id="video-1" aria-labelledby="video-1-title">
+        <div class="wrap">
+        <span class="section-tag">Step 1</span>
+        <h2 id="video-1-title">Start here</h2>
+        <div class="video-frame">
+          <iframe src="https://player.vimeo.com/video/1234669128?autoplay=0&amp;title=0&amp;byline=0&amp;portrait=0" title="Step 1: Start here" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen></iframe>
+        </div>
+        </div>
+      </section>
+      <section class="section" id="video-2" aria-labelledby="video-2-title">
+        <div class="wrap">
+        <span class="section-tag">Step 2</span>
+        <h2 id="video-2-title">Why this masterclass</h2>
+        <div class="video-frame">
+          <iframe src="https://player.vimeo.com/video/1234669127?autoplay=0&amp;title=0&amp;byline=0&amp;portrait=0" title="Step 2: Why this masterclass" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen></iframe>
+        </div>
+        </div>
+      </section>
+      <div class="calendar-repeat">
+        <div class="wrap">
+        <p>Make sure the workshop is on your calendar.</p>
+        <div class="calendar-action">
+          <a title="Add to Calendar" class="addeventatc custom-button" data-id="4bw39x1lvh6v" href="https://www.addevent.com/event/4bw39x1lvh6v" target="_blank" rel="noopener">
+            <svg class="calendar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 5h14v16H5zM8 2v6M16 2v6M5 10h14M8 14h3M13 14h3M8 17h3"/></svg>
+            Add to Calendar
+          </a>
+        </div>
+        </div>
+      </div>
+
+      <section class="section" id="workshop-preparation" aria-labelledby="prep-title">
+        <div class="wrap">
+        <h2 id="prep-title">How to make the most<br>out of this masterclass.</h2>
+        <ol class="prep-list">
+          <li><strong>Keep an eye out for my emails</strong> as all the further instructions will be sent to your email inbox.</li>
+          <li><strong>Block out 2 hours of your time</strong> and cut off any distractions so you can get the most out of this workshop.</li>
+          <li><strong>Your mobile will not give you the full experience</strong> of this workshop so show up on a desktop or a laptop instead.</li>
+          <li><strong>Watch the workshop with your spouse</strong> as the information presented will be incredibly valuable to both of you. And if you're both going on this journey, it will be super important that you're on the same page.</li>
+        </ol>
+        </div>
+      </section>
+      <section class="section" id="questions" aria-labelledby="faq-title">
+        <div class="wrap">
+        <h2 id="faq-title">Frequently asked questions.</h2>
+        <div class="faq-list">
+          <details><summary>I make decent money but still feel stuck. Is this actually for me?</summary><div class="answer"><p>Yes. This masterclass is for high earners who are doing well on paper but not seeing it stack up. If you're making 80K, 150K, even 300K and still wondering where it's all going, this will hit home.</p></div></details>
+          <details><summary>What if I've already tried budgeting or saving? Is this just more of the same?</summary><div class="answer"><p>No. This isn't another "cut your lattes" seminar.</p><p>We're going into the stuff wealthy families and high-net-worth individuals use but don't like to talk about.</p><p>The kind of strategies that actually move the needle.</p></div></details>
+          <details><summary>I already have a CPA. Won't they already know all this?</summary><div class="answer"><p>Most CPAs act as tax filers, not tax strategists.</p><p>If your CPA hasn't shown you how to bring your taxes down by 20 to 40 percent in the next 12 months, you absolutely cannot miss this.</p><p>This masterclass will help you stop reacting to taxes and start planning them.</p></div></details>
+          <details><summary>I'm not in real estate. Is this still relevant?</summary><div class="answer"><p>Yes. Only a few strategies are about real estate. The rest apply no matter what you do.</p></div></details>
+          <details><summary>Do I need to be good with money and finances to understand this?</summary><div class="answer"><p>Not at all. You don't need a finance degree to understand any of this.</p><p>I've broken down all the concepts in an extremely simple way so that anybody can follow as long as you show up.</p></div></details>
+        </div>
+        </div>
+      </section>
+  </main>
+  <footer>
+    <div class="wrap">
+      <p>This site is not a part of the Facebook website or Facebook Inc. Additionally, this site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.</p>
+      <p>INCOME DISCLAIMER: Although we make every effort to accurately represent the services and/or products presented on this website, Preston Seo makes no assurance, representation or promise regarding future earnings or income, or that you will make any specific amount of money, or any money at all, or that you will not lose money. Earnings or income statements, or examples of earnings or income, represent estimates of what you may earn; however, there is no promise or guarantee that you may experience the same level of earnings or income. There is no assurance that any prior success or past results regarding earnings or income may be an indication of your future success or results.</p>
+      <p>Legacy Investing Show LLC,<br>1993 Dewar Dr<br>Suite 256<br>Rock Springs, WY 82901</p>
+      <nav class="footer-links" aria-label="Legal"><a href="/contactus" target="_blank" rel="noopener">Contact Us</a><a href="https://www.legacyinvestingshow.com/terms" target="_blank" rel="noopener">Privacy Policy</a></nav>
+    </div>
+  </footer>
+  <script>
+    const EVENT_DATE = new Date('2026-10-13T19:00:00-04:00');
+    const localTime = document.getElementById('local-time');
+    const localDate = new Intl.DateTimeFormat(undefined, { month: 'long', day: 'numeric' }).format(EVENT_DATE);
+    const easternDate = new Intl.DateTimeFormat(undefined, { timeZone: 'America/New_York', month: 'long', day: 'numeric' }).format(EVENT_DATE);
+    const clockTime = new Intl.DateTimeFormat(undefined, { hour: 'numeric', minute: '2-digit' }).format(EVENT_DATE);
+    localTime.textContent = "That's " + clockTime + (localDate === easternDate ? '' : ' on ' + localDate) + ' your time.';
+
+    function updateCountdown() {
+      const remaining = Math.max(0, EVENT_DATE.getTime() - Date.now());
+      const values = {
+        days: Math.floor(remaining / 86400000),
+        hours: Math.floor(remaining / 3600000) % 24,
+        minutes: Math.floor(remaining / 60000) % 60
+      };
+      Object.keys(values).forEach(function (unit) {
+        document.getElementById(unit).textContent = String(values[unit]).padStart(2, '0');
+      });
+      if (remaining === 0) clearInterval(countdownTimer);
+    }
+    let countdownTimer = setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+  <script src="https://cdn.addevent.com/libs/atc/1.6.1/atc.min.js" defer></script>
+  <script src="/assets/js/webinar-analytics.js" defer></script>
+</body>
+</html>
