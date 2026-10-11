@@ -33,6 +33,7 @@
     '/tax-strategies-whop.html': { canonical: '/tax-strategies-whop', step: 'registration_landing', page: 'webinar_registration', variant: 'tax_strategies_whop' },
     '/tax-strategies-confirmation-whop': { canonical: '/tax-strategies-confirmation-whop', step: 'registration_confirmation', page: 'webinar_confirmation', variant: 'tax_strategies_whop' },
     '/tax-strategies-confirmation-whop.html': { canonical: '/tax-strategies-confirmation-whop', step: 'registration_confirmation', page: 'webinar_confirmation', variant: 'tax_strategies_whop' },
+    '/taxseasonconfirmation-whop': { canonical: '/tax-strategies-confirmation-whop', step: 'registration_confirmation', page: 'webinar_confirmation', variant: 'tax_strategies_whop' },
     '/taxstrategiesconfirmationyt': { canonical: '/taxstrategiesconfirmationyt', step: 'registration_confirmation', page: 'webinar_confirmation', variant: 'tax_strategies_youtube' },
     '/taxstrategiesconfirmationyt.html': { canonical: '/taxstrategiesconfirmationyt', step: 'registration_confirmation', page: 'webinar_confirmation', variant: 'tax_strategies_youtube' },
     '/lwbfoundations': { canonical: '/lwbfoundations', step: 'foundations_sales', page: 'foundations_sales_page', variant: 'course_and_ai' },

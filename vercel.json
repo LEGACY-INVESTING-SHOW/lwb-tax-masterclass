@@ -1,6 +1,14 @@
 {
   "rewrites": [
     {
+      "source": "/taxseasonconfirmation-whop",
+      "destination": "/tax-strategies-confirmation-whop.html"
+    },
+    {
+      "source": "/taxseasonconfirmation-whop/",
+      "destination": "/tax-strategies-confirmation-whop.html"
+    },
+    {
       "source": "/tax-strategies-confirmation-whop",
       "destination": "/tax-strategies-confirmation-whop.html"
     },
