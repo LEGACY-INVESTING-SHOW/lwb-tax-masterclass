@@ -426,6 +426,10 @@ window.s$Tracker['siteIdentifier'] = '1f1c6568-525e-6cae-9ead-61963b31ab50';
     .close p { max-width: 56ch; margin: 0 auto 2.1rem; color: #aebcaf; }
     .close .button { color: var(--forest-950); background: var(--gold-light); border-color: var(--gold); }
     .close__note { margin-top: .9rem; color: #7f8f81; font-size: .74rem; }
+    #checkout { padding: clamp(12px, 2.5vw, 24px); scroll-margin-top: 2rem; background: #fff; text-align: left; }
+    .close .checkout-status { margin-bottom: 1.5rem; color: var(--paper); }
+    .checkout-error { padding: 1.5rem; border: 1px solid var(--gold); }
+    .checkout-error .button { margin-top: .5rem; font: inherit; cursor: pointer; }
 
     footer {
       padding: 2.5rem 0 3rem;
@@ -698,12 +702,15 @@ window.s$Tracker['siteIdentifier'] = '1f1c6568-525e-6cae-9ead-61963b31ab50';
         <p class="eyebrow">Your next step</p>
         <h2>Open the first lesson tonight.</h2>
         <p>$1,500 once, or from $125/month for 12 months with Splitit. Lifetime access either way.</p>
-        <div id="checkout"
-          data-whop-checkout-plan-id="plan_ThiSPZvUsDffb"
-          data-whop-checkout-theme="light"
-          data-whop-checkout-theme-accent-color="#3358d4"
-        ></div>
-        <script async src="https://js.whop.com/static/checkout/loader.js"></script>
+        <p id="checkout-status" class="checkout-status" role="status">Loading secure checkout...</p>
+        <div id="checkout" data-checkout-plan-id="plan_ThiSPZvUsDffb" data-ph-no-capture aria-busy="true">
+          <div id="checkout-element"></div>
+        </div>
+        <div id="checkout-error" class="checkout-error" role="alert" hidden>
+          <p>We couldn't load the secure checkout. Please reload it and try again.</p>
+          <button id="checkout-retry" class="button" type="button">Reload checkout</button>
+        </div>
+        <noscript><p>Please enable JavaScript to load the secure checkout.</p></noscript>
         <div class="close__note">Secure checkout · Access details sent after purchase</div>
       </div>
     </section>
@@ -718,6 +725,8 @@ window.s$Tracker['siteIdentifier'] = '1f1c6568-525e-6cae-9ead-61963b31ab50';
       </div>
     </div>
   </footer>
+  <script src="https://cdn.whop.com/elements/amber/elements.js" data-whop-elements defer></script>
+  <script src="/assets/js/lwbfoundations-checkout.js" defer></script>
   <script src="/assets/js/webinar-analytics.js" defer></script>
 </body>
 </html>
