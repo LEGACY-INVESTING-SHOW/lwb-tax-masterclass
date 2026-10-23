@@ -76,6 +76,17 @@ window.s$Tracker['siteIdentifier'] = '1f1c6568-525e-6cae-9ead-61963b31ab50';
     h2 { font-size: clamp(28px, 3.6vw, 39px); line-height: 1.12; }
     .video-frame { position: relative; aspect-ratio: 16 / 9; margin-top: 26px; overflow: hidden; border-radius: 8px; background: var(--green-dark); box-shadow: 0 14px 36px #15211b14; }
     .video-frame iframe { display: block; width: 100%; height: 100%; border: 0; }
+    #proof { border-top: 1px solid var(--line); }
+    .proof-rating { display: inline-flex; align-items: center; gap: 10px; margin-top: 16px; color: var(--ink-soft); font-size: 15px; font-weight: 600; line-height: 1.4; text-decoration: none; }
+    .proof-rating:hover { color: var(--green); text-decoration: underline; }
+    .proof-stars { width: 90px; height: 18px; flex: 0 0 auto; }
+    .proof-group { margin-top: 48px; }
+    .proof-group .section-tag { margin-bottom: 18px; }
+    .proof-shot { display: block; width: 100%; height: auto; background: var(--card); border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 14px 36px #15211b14; }
+    .proof-masonry { columns: 2; column-gap: 18px; margin-bottom: -18px; }
+    .proof-masonry .proof-shot { margin-bottom: 18px; break-inside: avoid; }
+    .proof-plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .proof-note { margin-top: 36px; color: var(--ink-soft); font-size: 14px; }
     .calendar-repeat { text-align: center; padding: 0 0 64px; }
     .calendar-repeat p { font-weight: 600; font-size: 19px; }
     .prep-list { list-style: none; max-width: 720px; padding: 0; margin: 36px auto 0; text-align: left; counter-reset: prep; }
@@ -106,6 +117,10 @@ window.s$Tracker['siteIdentifier'] = '1f1c6568-525e-6cae-9ead-61963b31ab50';
       .time-box strong { font-size: 40px; }
       .section { padding: 42px 0; }
       .calendar-repeat { padding-bottom: 42px; }
+      .proof-group { margin-top: 36px; }
+      .proof-masonry, .proof-plans { display: flex; align-items: flex-start; gap: 12px; columns: auto; margin: 0 -18px; padding: 0 18px 4px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+      .proof-masonry::-webkit-scrollbar, .proof-plans::-webkit-scrollbar { display: none; }
+      .proof-masonry .proof-shot, .proof-plans .proof-shot { flex: none; width: 82%; margin-bottom: 0; scroll-snap-align: center; box-shadow: 0 8px 20px #15211b12; }
       .addeventatc.custom-button { min-width: min(280px, 100%); padding: 17px 22px !important; }
       summary { font-size: 17px; }
     }
@@ -181,6 +196,44 @@ window.s$Tracker['siteIdentifier'] = '1f1c6568-525e-6cae-9ead-61963b31ab50';
         <div class="video-frame">
           <iframe src="https://player.vimeo.com/video/1234669127?autoplay=0&amp;title=0&amp;byline=0&amp;portrait=0" title="Step 2: Why this masterclass" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen></iframe>
         </div>
+        </div>
+      </section>
+      <section class="section" id="proof" aria-labelledby="proof-title">
+        <div class="wrap">
+        <h2 id="proof-title">What people did with these strategies</h2>
+        <a class="proof-rating" href="https://www.legacyinvestingshow.com/reviews" target="_blank" rel="noopener">
+          <svg class="proof-stars" viewBox="0 0 120 24" aria-hidden="true"><defs><linearGradient id="proof-star-part"><stop offset="10%" stop-color="#d5b35f"/><stop offset="10%" stop-color="#d8d2c4"/></linearGradient><path id="proof-star" d="M12 1.5l3.1 6.6 7.2.9-5.3 5 1.4 7.1L12 17.6l-6.4 3.5L7 14l-5.3-5 7.2-.9z"/></defs><g fill="#d5b35f"><use href="#proof-star"/><use href="#proof-star" x="24"/><use href="#proof-star" x="48"/><use href="#proof-star" x="72"/></g><use href="#proof-star" x="96" fill="url(#proof-star-part)"/></svg>
+          4.1 on Trustpilot from 73 reviews
+        </a>
+        <div class="proof-group">
+          <span class="section-tag">Reviews</span>
+          <div class="proof-masonry">
+            <img class="proof-shot" src="/assets/images/proof/tp-04-prestige-estates-properties.webp" width="1124" height="954" loading="lazy" decoding="async" alt="5-star Trustpilot review from Prestige Estates Properties: the strategies helped identify over $80,000 in tax savings in the first year">
+            <img class="proof-shot" src="/assets/images/proof/tp-03-isaac-e.webp" width="1124" height="594" loading="lazy" decoding="async" alt="5-star Trustpilot review by Isaac E.: went from a projected 5 figure tax bill to a small return with a few simple tax strategies">
+            <img class="proof-shot" src="/assets/images/proof/tp-14-ryan-plewe.webp" width="1124" height="640" loading="lazy" decoding="async" alt="5-star Trustpilot review by Ryan Plewe: many tax saving strategies to discuss with his CPA as a business owner">
+            <img class="proof-shot" src="/assets/images/proof/tp-29-earl.webp" width="1124" height="640" loading="lazy" decoding="async" alt="5-star Trustpilot review by Earl: the class helped him see how legal, financial and tax topics work as a system">
+            <img class="proof-shot" src="/assets/images/proof/tp-43-ellen-schooler.webp" width="1124" height="550" loading="lazy" decoding="async" alt="5-star Trustpilot review by Ellen Schooler: real life examples of how each tax rule applied">
+            <img class="proof-shot" src="/assets/images/proof/tp-28-lea-bush.webp" width="1124" height="550" loading="lazy" decoding="async" alt="5-star Trustpilot review by Lea Bush: Preston shared the steps he took himself and gave everything needed to take action">
+          </div>
+        </div>
+        <div class="proof-group">
+          <span class="section-tag">Member posts</span>
+          <div class="proof-masonry">
+            <img class="proof-shot" src="/assets/images/proof/stephanie-dailey-2026-03.webp" width="748" height="702" loading="lazy" decoding="async" alt="Post by Stephanie Dailey in the member community: $20k tax refund after implementing the tax strategies">
+            <img class="proof-shot" src="/assets/images/proof/dewan-studdard-2026-07.webp" width="748" height="498" loading="lazy" decoding="async" alt="Post by Dewan Studdard in the member community: fixed 15 years of single withholding on his W-4">
+            <img class="proof-shot" src="/assets/images/proof/sunny-davis-2026-03.webp" width="748" height="914" loading="lazy" decoding="async" alt="Post by Sunny Davis in the member community: maxed a backdoor Roth IRA for both 2025 and 2026">
+            <img class="proof-shot" src="/assets/images/proof/dan-kovacich-2025-08.webp" width="748" height="586" loading="lazy" decoding="async" alt="Post by Dan Kovacich in the member community: paid off a 29% interest card with a 0% balance transfer">
+          </div>
+        </div>
+        <div class="proof-group">
+          <span class="section-tag">Real wealth plans, names withheld</span>
+          <div class="proof-plans">
+            <img class="proof-shot" src="/assets/images/proof/case-019.webp" width="1200" height="1200" loading="lazy" decoding="async" alt="Wealth plan for dual W-2 earners in Oceanside, California: first-year value target of $47,085 to $81,229">
+            <img class="proof-shot" src="/assets/images/proof/case-082.webp" width="1200" height="1200" loading="lazy" decoding="async" alt="Wealth plan for a W-2 healthcare professional with an S-Corp: first-year value target of $77,962 to $134,407">
+            <img class="proof-shot" src="/assets/images/proof/case-086.webp" width="1200" height="1200" loading="lazy" decoding="async" alt="Wealth plan for a W-2 earner launching Airbnb arbitrage: first-year tax savings target of $56,100 to $116,300">
+          </div>
+        </div>
+        <p class="proof-note">Plan numbers are first-year targets, not money already saved. Results vary.</p>
         </div>
       </section>
       <div class="calendar-repeat">
