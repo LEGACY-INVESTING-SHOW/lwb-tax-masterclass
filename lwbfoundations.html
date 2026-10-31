@@ -9,724 +9,602 @@ window.s$Tracker['siteIdentifier'] = '1f1c6568-525e-6cae-9ead-61963b31ab50';
 <script async src="https://tag.pixel.spendback.ai/static/js/pixel.spendback.js"></script>
 <!-- End sb -->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="robots" content="noindex, nofollow">
-  <title>A Better Next Step | Legacy Wealth Blueprint</title>
-  <meta name="description" content="A private offer for reviewed Legacy Wealth Blueprint applicants: the same five-pillar curriculum, the working tools, and the Legacy Wealth AI Advisor for $1,500.">
+  <title data-slot="meta.title">Legacy Wealth Blueprint Foundations | Preston Seo</title>
+  <meta name="description" data-slot="meta.description" content="Get the five-pillar Legacy Wealth Blueprint course and Preston AI for $1,500 one time or $125 a month for 12 months with Splitit.">
+  <meta name="theme-color" content="#f4f4f4">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&amp;family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&amp;family=Geist+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
   <style>
     :root {
-      --forest-950: #10261d;
-      --forest-900: #173328;
-      --forest-700: #2d6049;
-      --forest-100: #dbe5db;
-      --paper: #f2eee4;
-      --paper-light: #faf7f0;
-      --paper-deep: #e8e0d1;
-      --ink: #1e211d;
-      --ink-soft: #54594f;
-      --muted: #777b70;
-      --gold: #b18b3d;
-      --gold-light: #e0c982;
-      --rust: #a24b36;
-      --line: rgba(30, 33, 29, 0.16);
-      --line-dark: rgba(242, 238, 228, 0.18);
-      --serif: "Fraunces", Georgia, serif;
-      --sans: "Instrument Sans", "Avenir Next", sans-serif;
-      --ease: cubic-bezier(.16, 1, .3, 1);
-      --shadow: 0 24px 70px rgba(16, 38, 29, 0.14);
+      --bg: #f4f4f4;
+      --ink: #111111;
+      --muted: #5c5c5c;
+      --green: #1e5b43;
+      --green-dark: #174634;
+      --line: rgba(17, 17, 17, .12);
+      --frame: #fff;
+      --shadow: 0 1px 2px rgba(17, 17, 17, .05), 0 28px 56px -28px rgba(17, 17, 17, .28);
+      --sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      --mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+      --ease: cubic-bezier(.25, 1, .5, 1);
+      --gutter: 32px;
+      --max: 1120px;
+      --space: clamp(80px, 9vw, 128px);
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    *, *::before, *::after { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
     body {
       margin: 0;
+      background: var(--bg);
       color: var(--ink);
-      background: var(--paper);
       font-family: var(--sans);
-      font-size: 1rem;
-      line-height: 1.65;
+      font-size: 18px;
+      line-height: 1.55;
       -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
+      -moz-osx-font-smoothing: grayscale;
     }
-
-    ::selection { color: var(--forest-950); background: var(--gold-light); }
+    h1, h2, h3, p, ol, ul, figure { margin: 0; }
+    ol, ul { padding: 0; list-style: none; }
+    img, video { display: block; max-width: 100%; }
     a { color: inherit; }
-    button, summary, a { -webkit-tap-highlight-color: transparent; }
+    ::selection { background: var(--green); color: #fff; }
+    :focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
 
-    .shell {
-      width: min(1180px, calc(100% - 2.5rem));
-      margin-inline: auto;
-    }
+    .wrap { width: min(var(--max), 100% - 2 * var(--gutter)); margin-inline: auto; }
+    .measure { width: min(62ch, 100% - 2 * var(--gutter)); margin-inline: auto; }
 
-    .reading {
-      width: min(760px, calc(100% - 2.5rem));
-      margin-inline: auto;
-    }
-
-    .eyebrow {
-      display: flex;
-      align-items: center;
-      gap: .75rem;
-      margin: 0 0 1rem;
-      color: var(--rust);
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .17em;
-      line-height: 1.2;
-      text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 1.75rem;
-      height: 1px;
-      background: currentColor;
-    }
-
-    h1, h2, h3, p { margin-top: 0; }
-    h1, h2, h3 {
-      font-family: var(--serif);
-      font-weight: 500;
-      letter-spacing: -.025em;
-      line-height: 1.05;
-    }
-
-    h1 { font-size: clamp(3rem, 6.8vw, 6.7rem); }
-    h2 { font-size: clamp(2.25rem, 4.6vw, 4.75rem); }
-    h3 { font-size: clamp(1.35rem, 2vw, 1.85rem); }
-
-    .topbar {
-      position: sticky;
-      z-index: 20;
-      top: 0;
-      border-bottom: 1px solid var(--line);
-      background: color-mix(in srgb, var(--paper-light) 92%, transparent);
-      backdrop-filter: blur(16px);
-    }
-
-    .topbar__inner {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
-      min-height: 4.25rem;
-      gap: clamp(1rem, 3vw, 2.25rem);
-    }
-
-    .wordmark {
-      text-decoration: none;
-      color: var(--forest-950);
-      font-family: var(--serif);
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: -.01em;
-    }
-
-    .wordmark span { color: var(--gold); }
-
-    .topbar__cta {
-      padding: .66rem 1rem;
-      color: var(--paper-light);
-      background: var(--forest-900);
-      border: 1px solid var(--forest-950);
-      border-radius: 2px;
-      font-size: .84rem;
-      font-weight: 700;
-      text-decoration: none;
-      transition: background .25s ease, transform .25s var(--ease);
-    }
-
-    .topbar__cta:hover { background: var(--forest-700); transform: translateY(-1px); }
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      padding: clamp(4rem, 9vw, 8.5rem) 0 clamp(3.5rem, 7vw, 6.5rem);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      width: min(36rem, 74vw);
-      aspect-ratio: 1;
-      top: -18rem;
-      right: -10rem;
-      border: 1px solid rgba(177, 139, 61, .28);
-      border-radius: 50%;
-      box-shadow: 0 0 0 5rem rgba(177, 139, 61, .04), 0 0 0 10rem rgba(177, 139, 61, .025);
-    }
-
-    .hero__grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: clamp(3rem, 8vw, 8rem);
-      align-items: end;
-    }
-
-    .hero h1 {
-      max-width: 13ch;
-      margin-bottom: 1.75rem;
-      font-family: var(--sans);
-      font-size: clamp(2.85rem, 5.7vw, 5.75rem);
-      font-weight: 600;
-      letter-spacing: -.045em;
+    h1 {
+      font-size: clamp(2.375rem, 4.4vw + .6rem, 4.375rem);
+      font-weight: 800;
       line-height: 1.02;
+      letter-spacing: -0.035em;
+      text-wrap: balance;
     }
-    .hero h1 em { color: var(--forest-700); font-weight: 500; }
-
-    .hero__lead {
-      max-width: 61ch;
-      margin-bottom: 2.25rem;
-      color: var(--ink-soft);
-      font-size: clamp(1.06rem, 1.5vw, 1.22rem);
+    h2 {
+      font-size: clamp(2rem, 2.4vw + 1rem, 3rem);
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      text-wrap: balance;
     }
-
-    .actions { display: flex; flex-wrap: wrap; gap: .85rem; align-items: center; }
+    h3 { font-size: 20px; font-weight: 700; line-height: 1.3; letter-spacing: -0.015em; }
+    .lead {
+      margin-top: 18px;
+      max-width: 40em;
+      color: var(--muted);
+      font-size: clamp(18px, .5vw + 13px, 20px);
+      line-height: 1.5;
+      text-wrap: pretty;
+    }
+    .money { font-family: var(--mono); font-weight: 600; color: var(--green); letter-spacing: -0.02em; }
 
     .button {
       display: inline-flex;
+      align-items: center;
       justify-content: center;
-      align-items: center;
-      min-height: 3.45rem;
-      padding: .9rem 1.5rem;
-      border: 1px solid var(--forest-950);
-      border-radius: 2px;
-      color: var(--paper-light);
-      background: var(--forest-900);
-      box-shadow: 0 14px 30px rgba(16, 38, 29, .18);
-      font-size: .95rem;
-      font-weight: 700;
-      line-height: 1.1;
+      min-height: 56px;
+      padding: 0 30px;
+      border: 0;
+      border-radius: 10px;
+      background: var(--green);
+      color: #fff;
+      font: 600 17px/1 var(--sans);
+      letter-spacing: -0.005em;
       text-decoration: none;
-      transition: transform .3s var(--ease), background .3s ease, box-shadow .3s ease;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: background-color .2s var(--ease), transform .2s var(--ease);
     }
+    .button:hover { background: var(--green-dark); }
+    .button:active { transform: translateY(1px); }
 
-    .button:hover {
-      transform: translateY(-2px);
-      background: var(--forest-700);
-      box-shadow: 0 20px 38px rgba(16, 38, 29, .24);
-    }
+    /* Header */
+    .site-header { display: flex; align-items: center; justify-content: center; height: 68px; }
+    .wordmark { color: var(--ink); font-size: 16px; font-weight: 700; letter-spacing: -0.02em; text-decoration: none; }
 
-    .button--text {
-      min-height: 3.45rem;
-      padding-inline: .6rem;
-      color: var(--forest-900);
-      background: transparent;
-      border-color: transparent;
-      box-shadow: none;
-    }
-
-    .button--text:hover { background: transparent; box-shadow: none; }
-
-    .honesty {
-      padding: clamp(4.5rem, 9vw, 8.5rem) 0;
-      background: var(--paper-light);
-    }
-
-    .honesty__layout {
-      display: grid;
-      grid-template-columns: minmax(220px, .55fr) minmax(0, 1.3fr);
-      gap: clamp(2.5rem, 8vw, 8rem);
-      align-items: start;
-    }
-
-    .honesty__aside {
-      position: sticky;
-      top: 6.5rem;
-      padding-top: 1rem;
-      border-top: 3px solid var(--gold);
-    }
-
-    .honesty__aside p { color: var(--muted); font-size: .85rem; }
-    .honesty__aside strong { display: block; color: var(--forest-900); font-family: var(--serif); font-size: 1.4rem; font-weight: 500; }
-
-    .honesty h2 { max-width: 11ch; margin-bottom: 2rem; }
-    .honesty__copy { color: var(--ink-soft); font-size: clamp(1.05rem, 1.4vw, 1.18rem); }
-    .honesty__copy p { max-width: 64ch; margin-bottom: 1.3rem; }
-    .honesty__copy strong { color: var(--ink); }
-
-    .curriculum {
-      padding: clamp(4.5rem, 9vw, 8rem) 0;
-      color: var(--paper);
-      background: var(--forest-950);
-    }
-
-    .section-intro {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(280px, .55fr);
-      gap: clamp(2rem, 7vw, 7rem);
-      align-items: end;
-      margin-bottom: clamp(2.5rem, 6vw, 5rem);
-    }
-
-    .curriculum .eyebrow { color: var(--gold-light); }
-    .curriculum h2 { max-width: 10ch; color: var(--paper-light); margin-bottom: 0; }
-    .curriculum .section-intro p { margin-bottom: .35rem; color: #aebcaf; }
-
-    .curriculum__list { border-top: 1px solid var(--line-dark); }
-    .module {
-      display: grid;
-      grid-template-columns: 5rem minmax(220px, .62fr) minmax(0, 1fr);
-      gap: clamp(1.25rem, 4vw, 4rem);
-      padding: clamp(1.7rem, 3vw, 2.6rem) 0;
-      border-bottom: 1px solid var(--line-dark);
-      align-items: baseline;
-    }
-
-    .module__number { color: var(--gold-light); font-family: var(--serif); font-size: 1.1rem; }
-    .module h3 { margin: 0; color: var(--paper-light); }
-    .module p { margin: 0; color: #aebcaf; font-size: .96rem; }
-
-    .curriculum__foot {
-      display: flex;
-      justify-content: space-between;
-      gap: 2rem;
-      margin-top: 2rem;
-      color: var(--gold-light);
-      font-family: var(--serif);
-      font-size: 1.1rem;
-      font-style: italic;
-    }
-
-    .advisor {
-      padding: clamp(4.5rem, 9vw, 8.5rem) 0;
-      background: var(--paper);
-    }
-
-    .advisor__grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: clamp(2rem, 4vw, 3.25rem);
-      align-items: center;
-    }
-
-    .advisor__grid > div:first-child { max-width: 760px; }
-
-    .advisor h2 { max-width: 10ch; margin-bottom: 1.5rem; }
-    .advisor__lead { max-width: 51ch; color: var(--ink-soft); font-size: 1.08rem; }
-
-    .advisor__points {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: clamp(1.5rem, 4vw, 3.5rem);
-      margin: 1rem 0 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .advisor__points li {
-      display: grid;
-      gap: .6rem;
-      align-content: start;
-      padding-top: 1.15rem;
-      border-top: 1px solid var(--line);
-      color: var(--ink-soft);
-      font-size: .95rem;
-    }
-
-    .advisor__points span { color: var(--gold); font-family: var(--serif); font-size: 1.05rem; }
-    .advisor__points strong { color: var(--ink); }
-
-    .scope {
-      padding: clamp(4.5rem, 9vw, 8rem) 0;
-      background: var(--paper-light);
-      border-block: 1px solid var(--line);
-    }
-
-    .scope h2 { max-width: 12ch; margin-bottom: 2.5rem; }
-    .scope__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem, 5vw, 5rem); }
-    .scope__column { padding-top: 1.5rem; border-top: 3px solid var(--forest-700); }
-    .scope__column--out { border-top-color: var(--rust); }
-    .scope h3 { margin-bottom: 1.25rem; font-family: var(--sans); font-size: .92rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
-    .scope ul { display: grid; gap: .85rem; margin: 0; padding: 0; list-style: none; }
-    .scope li { position: relative; padding-left: 1.6rem; color: var(--ink-soft); }
-    .scope li::before { content: "+"; position: absolute; left: 0; color: var(--forest-700); font-weight: 700; }
-    .scope__column--out li::before { content: "—"; color: var(--rust); }
-
-    .offer {
-      padding: clamp(4.5rem, 9vw, 8.5rem) 0;
-      background: var(--paper);
-    }
-
-    .offer__card {
-      display: grid;
-      grid-template-columns: minmax(260px, .6fr) minmax(0, 1fr);
-      color: var(--paper);
-      background: var(--forest-950);
+    /* Hero */
+    .hero { padding: clamp(32px, 4.5vw, 64px) 0 var(--space); text-align: center; }
+    .hero__kicker { margin-bottom: 20px; color: var(--muted); font-size: 17px; font-weight: 500; }
+    .hero h1 { max-width: 1060px; margin-inline: auto; }
+    .hero__sub { margin: 24px auto 0; max-width: 33em; color: var(--muted); font-size: clamp(18px, .5vw + 13px, 20px); line-height: 1.5; text-wrap: balance; }
+    .vsl {
+      position: relative;
+      max-width: 880px;
+      margin: clamp(40px, 5vw, 60px) auto 0;
+      padding: 6px;
+      background: var(--frame);
+      border: 1px solid var(--line);
+      border-radius: 14px;
       box-shadow: var(--shadow);
     }
-
-    .offer__price {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 30rem;
-      padding: clamp(2rem, 5vw, 4rem);
-      background: var(--forest-900);
-      border-right: 1px solid var(--line-dark);
+    .vsl video { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 9px; background: var(--ink); }
+    .vsl__play {
+      position: absolute;
+      inset: 6px;
+      display: grid;
+      place-items: center;
+      padding: 0;
+      border: 0;
+      border-radius: 9px;
+      background: transparent;
+      color: var(--ink);
+      cursor: pointer;
     }
+    .vsl__play span {
+      display: grid;
+      place-items: center;
+      width: clamp(68px, 8vw, 96px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .28);
+      transition: transform .25s var(--ease);
+    }
+    .vsl__play svg { width: 36%; margin-left: 8%; }
+    .vsl__play:hover span { transform: scale(1.05); }
+    .hero__cta { display: flex; flex-direction: column; align-items: center; gap: 16px; margin-top: clamp(36px, 4vw, 48px); }
+    .price-line { color: var(--muted); font-size: 16px; }
 
-    .offer__price .eyebrow { color: var(--gold-light); }
-    .offer__price h2 { margin-bottom: 0; color: var(--paper-light); font-size: clamp(2rem, 3.8vw, 3.8rem); }
-    .price { margin-top: auto; color: var(--gold-light); font-family: var(--serif); font-size: clamp(4.25rem, 8vw, 7rem); letter-spacing: -.05em; line-height: .85; }
-    .price sup { position: relative; top: -.75em; font-size: .28em; }
-    .price-note { margin: 1rem 0 0; color: #aebcaf; font-size: .78rem; }
-    .price-monthly { margin: 1.15rem 0 0; color: var(--paper-light); font-family: var(--serif); font-size: clamp(1.2rem, 1.9vw, 1.6rem); font-style: italic; line-height: 1.25; }
-    .price-monthly strong { color: var(--gold-light); font-style: normal; font-weight: 500; }
-    .hero__finance { margin: 1.1rem 0 0; color: var(--muted); font-size: .85rem; font-weight: 600; }
-    .hero__finance strong { color: var(--forest-900); }
-
-    .offer__body { padding: clamp(2rem, 5vw, 4rem); }
-    .offer__body h3 { margin-bottom: 1.5rem; color: var(--paper-light); font-size: 1.8rem; }
-    .offer__list { display: grid; gap: 1.1rem; margin: 0 0 2.25rem; padding: 0; list-style: none; }
-    .offer__list li { position: relative; padding: 0 0 1.1rem 1.8rem; border-bottom: 1px solid var(--line-dark); color: #b8c3b8; }
-    .offer__list li::before { content: "✓"; position: absolute; left: 0; color: var(--gold-light); font-weight: 700; }
-    .offer__list strong { color: var(--paper-light); }
-    .offer .button { color: var(--forest-950); background: var(--gold-light); border-color: var(--gold); box-shadow: 0 16px 30px rgba(0, 0, 0, .25); }
-    .offer .button:hover { background: #ead795; }
-    .offer__microcopy { margin: .85rem 0 0; color: #8f9d90; font-size: .75rem; }
-
-    .faq {
-      padding: clamp(4.5rem, 9vw, 8rem) 0;
-      background: var(--paper-light);
+    /* Sections */
+    .section { padding-bottom: var(--space); }
+    .section::before {
+      content: "";
+      display: block;
+      width: min(var(--max), 100% - 2 * var(--gutter));
+      margin: 0 auto var(--space);
       border-top: 1px solid var(--line);
     }
+    .section--flush::before { display: none; }
 
-    .faq h2 { margin-bottom: 2.2rem; }
-    .faq details { border-top: 1px solid var(--line); }
-    .faq details:last-of-type { border-bottom: 1px solid var(--line); }
-    .faq summary {
+    /* Note from Preston */
+    .note h2 { font-size: clamp(2rem, 1.6vw + 1rem, 2.5rem); margin-bottom: 28px; }
+    .note p + p { margin-top: 1.1em; }
+    .signoff { display: flex; align-items: center; gap: 14px; margin-top: 36px; }
+    .signoff img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; }
+    .signoff span { font-weight: 600; letter-spacing: -0.01em; }
+
+    /* Course */
+    .pillars { margin-top: clamp(40px, 5vw, 60px); border-bottom: 1px solid var(--line); }
+    .pillar {
+      display: grid;
+      grid-template-columns: 30% 1fr;
+      gap: 32px;
+      align-items: baseline;
+      padding: 26px 0;
+      border-top: 1px solid var(--line);
+    }
+    .pillar p { color: var(--muted); }
+    .extras { margin-top: 24px; color: var(--muted); font-size: 16px; }
+
+    /* Preston AI */
+    .ai-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px 40px; margin-top: clamp(44px, 5vw, 64px); }
+    .shot { padding: 8px; background: var(--frame); border: 1px solid var(--line); border-radius: 14px; }
+    .shot img { width: 100%; height: auto; aspect-ratio: 16 / 10; border-radius: 8px; }
+    .ai-item h3 { margin-top: 22px; }
+    .ai-item p { margin-top: 6px; max-width: 34em; color: var(--muted); }
+    .ai-limit { margin-top: 56px; color: var(--muted); font-size: 15px; }
+
+    /* What's included */
+    /* Subgrid keeps both columns' rows level when one side wraps. */
+    .compare { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(5, auto); gap: 0 48px; margin-top: clamp(40px, 5vw, 56px); }
+    .compare__col { display: grid; grid-row: span 5; grid-template-rows: subgrid; }
+    .compare h3 { align-self: end; padding-bottom: 18px; font-size: 18px; }
+    .compare ul { display: contents; }
+    .compare li { padding: 16px 0; border-top: 1px solid var(--line); }
+    .compare li:last-child { border-bottom: 1px solid var(--line); }
+    .compare__col--muted { color: var(--muted); }
+
+    /* Checkout */
+    .checkout { text-align: center; }
+    .checkout .lead { margin-inline: auto; max-width: 30em; }
+    .price {
+      margin-top: 44px;
+      color: var(--green);
+      font-family: var(--mono);
+      font-size: clamp(60px, 5vw + 1.5rem, 96px);
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+    .price__comma { margin-inline: -0.17em; }
+    .price-sub { margin-top: 14px; color: var(--muted); }
+    .checkout__box { max-width: 640px; margin: 44px auto 0; }
+    .checkout-status { margin-bottom: 16px; color: var(--muted); font-size: 15px; }
+    #checkout {
+      padding: clamp(12px, 2.5vw, 24px);
+      scroll-margin-top: 24px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      text-align: left;
+    }
+    .checkout-error { margin-top: 16px; padding: 24px; border: 1px solid var(--line); border-radius: 14px; }
+    .checkout-error .button { margin-top: 14px; }
+    .fine { margin-top: 20px; color: var(--muted); font-size: 14px; }
+
+    /* FAQ */
+    .faq-list { width: min(760px, 100% - 2 * var(--gutter)); margin-inline: auto; border-bottom: 1px solid var(--line); }
+    .faq-list details { border-top: 1px solid var(--line); }
+    .faq-list summary {
       position: relative;
-      cursor: pointer;
-      padding: 1.3rem 3rem 1.3rem 0;
+      padding: 24px 44px 24px 0;
+      font-size: 19px;
+      font-weight: 600;
+      letter-spacing: -0.012em;
+      line-height: 1.35;
       list-style: none;
-      color: var(--ink);
-      font-size: 1.02rem;
-      font-weight: 700;
+      cursor: pointer;
     }
-
-    .faq summary::-webkit-details-marker { display: none; }
-    .faq summary::after { content: "+"; position: absolute; right: .35rem; top: 50%; color: var(--gold); font-family: var(--serif); font-size: 1.7rem; font-weight: 400; transform: translateY(-50%); transition: transform .25s var(--ease); }
-    .faq details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
-    .faq details p { max-width: 67ch; padding: 0 0 1.4rem; margin: 0; color: var(--ink-soft); }
-
-    .close {
-      padding: clamp(4.5rem, 9vw, 8.5rem) 0;
-      color: var(--paper);
-      background: var(--forest-950);
-      text-align: center;
+    .faq-list summary::-webkit-details-marker { display: none; }
+    .faq-list summary::before,
+    .faq-list summary::after {
+      content: "";
+      position: absolute;
+      right: 6px;
+      top: 50%;
+      width: 14px;
+      height: 1.5px;
+      background: var(--ink);
+      transition: transform .25s var(--ease);
     }
+    .faq-list summary::after { transform: rotate(90deg); }
+    .faq-list details[open] summary::after { transform: rotate(0deg); }
+    .faq-list details p { padding: 0 44px 26px 0; color: var(--muted); }
 
-    .close .eyebrow { justify-content: center; color: var(--gold-light); }
-    .close h2 { max-width: 14ch; margin: 0 auto 1.4rem; color: var(--paper-light); }
-    .close p { max-width: 56ch; margin: 0 auto 2.1rem; color: #aebcaf; }
-    .close .button { color: var(--forest-950); background: var(--gold-light); border-color: var(--gold); }
-    .close__note { margin-top: .9rem; color: #7f8f81; font-size: .74rem; }
-    #checkout { padding: clamp(12px, 2.5vw, 24px); scroll-margin-top: 2rem; background: #fff; text-align: left; }
-    .close .checkout-status { margin-bottom: 1.5rem; color: var(--paper); }
-    .checkout-error { padding: 1.5rem; border: 1px solid var(--gold); }
-    .checkout-error .button { margin-top: .5rem; font: inherit; cursor: pointer; }
+    /* Footer */
+    .site-footer { padding-bottom: calc(48px + env(safe-area-inset-bottom)); color: var(--muted); font-size: 14px; line-height: 1.6; }
+    .site-footer .wrap { display: grid; grid-template-columns: 1fr 2fr; gap: 32px; padding-top: 48px; border-top: 1px solid var(--line); }
+    .site-footer p { max-width: 62ch; }
+    .site-footer p + p { margin-top: 12px; }
 
-    footer {
-      padding: 2.5rem 0 3rem;
-      color: #859187;
-      background: #0b1712;
-      font-size: .74rem;
-    }
+    /* Sticky mobile CTA */
+    .sticky-cta { display: none; }
 
-    .footer__grid { display: grid; grid-template-columns: .4fr 1fr; gap: 2rem; }
-    footer .wordmark { color: var(--paper); }
-    footer p { max-width: 80ch; margin-bottom: .7rem; }
+    /* Motion */
+    .js .reveal { opacity: 0; transform: translateY(14px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+    .js .reveal.is-in { opacity: 1; transform: none; }
 
-    /* ---- Single-column layout: centered headers, left-aligned body ---- */
-    .shell { width: min(880px, calc(100% - 2.5rem)); }
+    @media (max-width: 767px) {
+      :root { --gutter: 20px; --space: 72px; }
+      body { font-size: 17px; }
+      .site-header { height: 56px; }
+      .hero { padding-top: 20px; }
+      .hero__kicker { margin-bottom: 14px; font-size: 15px; }
+      .hero__sub { margin-top: 18px; }
+      .vsl { padding: 4px; border-radius: 12px; }
+      .vsl video, .vsl__play { border-radius: 8px; }
+      .vsl__play { inset: 4px; }
+      .hero__cta { gap: 14px; }
+      .hero__cta .button { width: 100%; }
+      .price-line { font-size: 15px; }
 
-    .eyebrow { justify-content: center; }
-    .eyebrow::after { content: ""; width: 1.75rem; height: 1px; background: currentColor; }
+      .note h2 { margin-bottom: 22px; }
+      .signoff { margin-top: 28px; }
+      .signoff img { width: 44px; height: 44px; }
 
-    h1, h2 { margin-inline: auto; text-align: center; }
+      .pillar { grid-template-columns: 1fr; gap: 4px; padding: 20px 0; }
+      .pillar h3 { font-size: 18px; }
+      .pillar p { font-size: 16px; }
+      .extras { font-size: 15px; }
 
-    .hero { text-align: center; }
-    .hero h1 { max-width: 16ch; }
-    .hero__lead { max-width: 58ch; margin-inline: auto; text-align: left; }
-    .actions { justify-content: center; }
-    .hero::after { right: 50%; transform: translateX(50%); }
+      .ai-grid {
+        display: flex;
+        gap: 14px;
+        margin-inline: calc(-1 * var(--gutter));
+        padding-inline: var(--gutter);
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x mandatory;
+        scroll-padding-inline: var(--gutter);
+        scrollbar-width: none;
+      }
+      .ai-grid::-webkit-scrollbar { display: none; }
+      .ai-item { flex: 0 0 84%; scroll-snap-align: start; }
+      .shot { padding: 5px; border-radius: 12px; }
+      .shot img { border-radius: 7px; }
+      .ai-item h3 { margin-top: 16px; font-size: 18px; }
+      .ai-item p { font-size: 16px; }
+      .ai-limit { margin-top: 36px; font-size: 14px; }
 
-    .honesty__layout { grid-template-columns: 1fr; gap: 2.25rem; }
-    .honesty__aside { position: static; border-top: 0; padding-top: 0; text-align: center; }
-    .honesty__aside::before { content: ""; display: block; width: 3.5rem; height: 3px; margin: 0 auto 1.1rem; background: var(--gold); }
-    .honesty h2 { max-width: 14ch; }
-    .honesty__copy { max-width: 62ch; margin-inline: auto; }
+      .compare { gap: 0 20px; margin-top: 32px; }
+      .compare h3 { padding-bottom: 12px; font-size: 15px; line-height: 1.3; }
+      .compare li { padding: 12px 0; font-size: 14.5px; line-height: 1.4; }
 
-    .section-intro { grid-template-columns: 1fr; gap: 1.25rem; text-align: center; }
-    .curriculum .section-intro p { max-width: 58ch; margin-inline: auto; }
-    .curriculum__list { max-width: 54rem; margin-inline: auto; }
-    .module { grid-template-columns: 3.5rem 1fr; gap: .4rem 1.5rem; align-items: baseline; }
-    .module p { grid-column: 2; }
-    .curriculum__foot { justify-content: center; gap: .75rem 3rem; flex-wrap: wrap; }
+      .price { margin-top: 36px; }
+      .price-sub { font-size: 16px; }
+      .checkout__box { margin-top: 36px; }
 
-    .advisor__grid > div:first-child { max-width: none; }
-    .advisor h2 { max-width: 12ch; }
-    .advisor__lead { max-width: 58ch; margin-inline: auto; }
-    .advisor__points { grid-template-columns: 1fr; max-width: 44rem; margin-inline: auto; gap: 1.6rem; }
+      .faq-list summary { padding: 20px 36px 20px 0; font-size: 17px; }
+      .faq-list details p { padding: 0 0 22px; font-size: 16px; }
 
-    .scope h2 { max-width: 16ch; }
-    .scope__grid { grid-template-columns: 1fr; gap: 3rem; max-width: 44rem; margin-inline: auto; }
+      .site-footer { padding-bottom: calc(40px + env(safe-area-inset-bottom)); }
+      .site-footer .wrap { grid-template-columns: 1fr; gap: 16px; padding-top: 36px; }
 
-    .offer__card { grid-template-columns: 1fr; }
-    .offer__price { min-height: 0; text-align: center; align-items: center; gap: 1.75rem; border-right: 0; border-bottom: 1px solid var(--line-dark); }
-    .offer__price .price { margin-top: 0; }
-    .price-monthly, .price-note { margin-inline: auto; max-width: 42ch; }
-    .offer__body { text-align: center; }
-    .offer__list { max-width: 40rem; margin-inline: auto; margin-bottom: 2.25rem; text-align: left; }
-
-    footer { text-align: center; }
-    .footer__grid { grid-template-columns: 1fr; gap: 1.5rem; }
-    footer p { margin-inline: auto; }
-    /* ---- end centered layout ---- */
-
-    @media (max-width: 850px) {
-      .topbar__inner { grid-template-columns: 1fr auto; }
-      .hero__grid, .honesty__layout, .advisor__grid, .offer__card { grid-template-columns: 1fr; }
-      .hero h1 { max-width: 12ch; }
-      .section-intro { grid-template-columns: 1fr; align-items: start; }
-      .footer__grid { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 620px) {
-      body { font-size: 1rem; }
-      .shell, .reading { width: min(100% - 2rem, 1180px); }
-      .topbar__cta { padding: .6rem .75rem; font-size: .76rem; }
-      .hero { padding-top: 3.7rem; }
-      .actions { align-items: stretch; }
-      .actions .button { width: 100%; }
-      .curriculum__foot { flex-direction: column; gap: .25rem; }
+      .sticky-cta {
+        display: block;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 50;
+        padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+        background: var(--bg);
+        border-top: 1px solid var(--line);
+        transform: translateY(110%);
+        visibility: hidden;
+        transition: transform .3s var(--ease), visibility 0s linear .3s;
+      }
+      .sticky-cta.is-visible { transform: none; visibility: visible; transition: transform .3s var(--ease); }
+      .sticky-cta .button { width: 100%; min-height: 52px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+      .js .reveal { opacity: 1; transform: none; transition: none; }
+      .button, .vsl__play span, .faq-list summary::after, .sticky-cta, .sticky-cta.is-visible { transition: none; }
     }
   </style>
 </head>
 <body>
-  <nav class="topbar" aria-label="Primary">
-    <div class="shell topbar__inner">
-      <a class="wordmark" href="#top">Legacy <span>Investing Show</span></a>
-      <a class="topbar__cta" href="#enroll">Course + AI · from $125/mo</a>
-    </div>
-  </nav>
+  <header class="site-header">
+    <a class="wordmark" href="#top">Legacy Investing Show</a>
+  </header>
 
   <main id="top">
     <header class="hero">
-      <div class="shell hero__grid">
-        <div>
-          <p class="eyebrow">We reviewed your application</p>
-          <h1>Start with the system <em>the full program is built on.</em></h1>
-          <p class="hero__lead">The full Legacy Wealth Blueprint wraps this system in a custom plan, weekly coaching, and a team that helps carry the implementation. That level of support earns its price once a household has real complexity to manage. Your application tells us you're at an earlier stage, where the biggest gains come from running the core strategies for the first time. So instead of booking you on a call, we're opening the part of the program you'd actually use right now.</p>
-          <div class="actions">
-            <a class="button" href="#enroll">Get the Course + AI</a>
-            <a class="button button--text" href="#curriculum">See what you'll learn&nbsp;↓</a>
-          </div>
-          <p class="hero__finance">$1,500 one time, or from <strong>$125/month for 12 months</strong> with Splitit.</p>
+      <div class="wrap">
+        <p class="hero__kicker" data-slot="hero.kicker">Thanks for applying.</p>
+        <h1 data-slot="hero.headline">Start with the course and Preston AI.</h1>
+        <p class="hero__sub" data-slot="hero.sub">Get the full five-pillar course and an AI money coach that works with your real numbers.</p>
+
+        <div class="vsl">
+          <video id="vsl-video" playsinline controls preload="none" poster="/assets/video/lwbfoundations-vsl-poster.jpg">
+            <source src="/assets/video/lwbfoundations-vsl.mp4" type="video/mp4">
+            <track kind="captions" src="/assets/video/lwbfoundations-vsl.vtt" srclang="en" label="English">
+          </video>
+          <button class="vsl__play" id="vsl-play" type="button" aria-label="Play video">
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5v17L20 12z" fill="currentColor"/></svg></span>
+          </button>
         </div>
 
+        <div class="hero__cta">
+          <a class="button" href="#enroll" data-slot="hero.button" data-sticky-hide>Get full access</a>
+          <p class="price-line" data-slot="hero.price"><span class="money">$1,500</span> one time, or <span class="money">$125</span> a month for 12 months with Splitit.</p>
+        </div>
       </div>
     </header>
 
-    <section class="honesty">
-      <div class="shell honesty__layout">
-        <aside class="honesty__aside">
-          <p>From</p>
-          <strong>Preston Seo</strong>
-          <p>Founder<br>Legacy Investing Show</p>
-        </aside>
-
-        <div>
-          <p class="eyebrow">A straight answer about fit</p>
-          <h2>Why you landed here instead of on my calendar.</h2>
-          <div class="honesty__copy">
-            <p>The full Legacy Wealth Blueprint is built for households with a lot moving at once: multiple income streams, entities, property, a meaningful tax bill, and decisions that affect one another. The custom plan, weekly coaching, and dedicated guide exist to manage that kind of complexity, and at that stage they are worth every dollar.</p>
-            <p><strong>Your application shows a different situation.</strong> The strategies that would change your numbers are sitting inside the curriculum, unopened. Paying a team to manage complexity you don't have yet would waste most of that fee.</p>
-            <p>So rather than take up your time on a call, I'd hand you direct access to the same core curriculum our members work from, with the AI Advisor answering your questions while you run it. When your income and your complexity grow into the full program, that door stays open.</p>
-          </div>
+    <section class="section note" id="note">
+      <div class="measure reveal">
+        <h2 data-slot="note.heading">Why I sent you to this page</h2>
+        <p data-slot="note.body.1">The full Legacy Wealth Blueprint costs five figures. We built it for households managing several income streams, entities, property, and a large tax bill.</p>
+        <p data-slot="note.body.2">Your application shows you are at an earlier stage, where the biggest gains come from putting the core strategies in place for the first time. Paying a team for complexity you do not have yet would waste your money.</p>
+        <p data-slot="note.body.3">That is why we skipped the sales call and opened the course and Preston AI for you. You can put the system to work with your own numbers today, and apply again when your situation grows.</p>
+        <div class="signoff">
+          <img src="/assets/images/preston-headshot-200.webp" alt="Preston Seo" width="52" height="52" loading="lazy" decoding="async">
+          <span>Preston Seo</span>
         </div>
       </div>
     </section>
 
-    <section class="curriculum" id="curriculum">
-      <div class="shell">
-        <div class="section-intro">
-          <div>
-            <p class="eyebrow">The five-pillar sequence</p>
-            <h2>Build in the right order.</h2>
-          </div>
-          <p>This is the same order of operations the full program is built on. Each pillar sets up the next, so you always know what to work on and what can wait.</p>
-        </div>
-
-        <div class="curriculum__list">
-          <article class="module">
-            <span class="module__number">01</span>
-            <h3>Control the tax leaks</h3>
-            <p>Learn the W-2 and business deductions, account choices, and entity decisions that may apply at your stage, then weigh any added complexity against the value it creates.</p>
-          </article>
-          <article class="module">
-            <span class="module__number">02</span>
-            <h3>Fix debt and credit</h3>
-            <p>Order balances by cost and consequence, understand refinancing and negotiation options, repair personal credit, and use business credit carefully.</p>
-          </article>
-          <article class="module">
-            <span class="module__number">03</span>
-            <h3>Grow earned income</h3>
-            <p>Turn skills into a side business, pressure-test passive-income ideas, and build additional income without casually trading away the rest of your week.</p>
-          </article>
-          <article class="module">
-            <span class="module__number">04</span>
-            <h3>Invest with a job in mind</h3>
-            <p>Work through stocks, real estate, workplace plans, Roth accounts, HSAs, and other vehicles by purpose, time horizon, and the risks you can actually carry.</p>
-          </article>
-          <article class="module">
-            <span class="module__number">05</span>
-            <h3>Protect what you build</h3>
-            <p>Review insurance, asset protection, estate basics, and the questions that help you hire a CPA, attorney, or advisor who earns the fee.</p>
-          </article>
-        </div>
-        <div class="curriculum__foot"><span>100+ video lessons</span><span>Templates, scripts, checklists, and calculators</span></div>
+    <section class="section course" id="curriculum">
+      <div class="wrap reveal">
+        <h2 data-slot="course.heading">The five pillars in the course</h2>
+        <p class="lead" data-slot="course.intro">You work through the same five pillars our full program members use, in a set order.</p>
+        <ol class="pillars">
+          <li class="pillar">
+            <h3 data-slot="course.pillars.1.name">Control the tax leaks</h3>
+            <p data-slot="course.pillars.1.text">Use the W-2 deductions, business deductions, accounts, and entities that fit your stage.</p>
+          </li>
+          <li class="pillar">
+            <h3 data-slot="course.pillars.2.name">Fix debt and credit</h3>
+            <p data-slot="course.pillars.2.text">Order debts by cost, explore refinancing, repair credit, and use business credit carefully.</p>
+          </li>
+          <li class="pillar">
+            <h3 data-slot="course.pillars.3.name">Grow earned income</h3>
+            <p data-slot="course.pillars.3.text">Turn your skills into a side business and add income in your spare hours.</p>
+          </li>
+          <li class="pillar">
+            <h3 data-slot="course.pillars.4.name">Invest with a purpose</h3>
+            <p data-slot="course.pillars.4.text">Choose stocks, real estate, Roth accounts, and HSAs by purpose, timeline, and risk.</p>
+          </li>
+          <li class="pillar">
+            <h3 data-slot="course.pillars.5.name">Protect what you build</h3>
+            <p data-slot="course.pillars.5.text">Cover insurance, asset protection, estate basics, and how to hire the right CPA.</p>
+          </li>
+        </ol>
+        <p class="extras" data-slot="course.extras">You get over 100 video lessons plus templates, scripts, checklists, calculators, and a debt guide.</p>
       </div>
     </section>
 
-    <section class="advisor">
-      <div class="shell advisor__grid">
-        <div>
-          <p class="eyebrow">Legacy Wealth AI Advisor</p>
-          <h2>Your questions still get answered.</h2>
-          <p class="advisor__lead">Full-program members bring their questions to live coaching. In this package, that job belongs to the Legacy Wealth AI Advisor. It's trained on the same five-pillar system, so when you share your real numbers it responds with the strategies that fit, the tradeoffs to weigh, and the exact lesson that covers the move.</p>
+    <section class="section ai" id="preston-ai">
+      <div class="wrap reveal">
+        <h2 data-slot="ai.heading">Preston AI knows your real numbers</h2>
+        <p class="lead" data-slot="ai.intro">ChatGPT gives you general pros and cons because it cannot see your accounts. Preston AI is an AI money coach built by my team that knows my strategies and your actual numbers.</p>
+        <div class="ai-grid">
+          <figure class="ai-item">
+            <div class="shot"><img src="/assets/images/preston-ai/preston-ai-accounts-1200.webp" srcset="/assets/images/preston-ai/preston-ai-accounts-600.webp 600w, /assets/images/preston-ai/preston-ai-accounts-1200.webp 1200w" sizes="(max-width: 767px) 84vw, 540px" width="1200" height="750" loading="lazy" decoding="async" alt="Preston AI pulling debts from connected banks and searching Preston's lessons"></div>
+            <figcaption>
+              <h3 data-slot="ai.features.1.title">Connect accounts safely through Plaid</h3>
+              <p data-slot="ai.features.1.text">Link up to 10 bank and investment accounts with read-only access that never moves your money.</p>
+            </figcaption>
+          </figure>
+          <figure class="ai-item">
+            <div class="shot"><img src="/assets/images/preston-ai/preston-ai-money-you-could-keep-1200.webp" srcset="/assets/images/preston-ai/preston-ai-money-you-could-keep-600.webp 600w, /assets/images/preston-ai/preston-ai-money-you-could-keep-1200.webp 1200w" sizes="(max-width: 767px) 84vw, 540px" width="1200" height="750" loading="lazy" decoding="async" alt="The Money you could keep scan listing a double charge, a bank fee and two subscriptions"></div>
+            <figcaption>
+              <h3 data-slot="ai.features.2.title">Spot money you could keep</h3>
+              <p data-slot="ai.features.2.text">Your Home screen scans for repeat charges, price increases, fees, double charges, and cash sitting idle.</p>
+            </figcaption>
+          </figure>
+          <figure class="ai-item">
+            <div class="shot"><img src="/assets/images/preston-ai/preston-ai-what-if-1200.webp" srcset="/assets/images/preston-ai/preston-ai-what-if-600.webp 600w, /assets/images/preston-ai/preston-ai-what-if-1200.webp 1200w" sizes="(max-width: 767px) 84vw, 540px" width="1200" height="750" loading="lazy" decoding="async" alt="Preston AI working out a debt payoff date after the user adds 200 dollars a month"></div>
+            <figcaption>
+              <h3 data-slot="ai.features.3.title">Run the math on decisions</h3>
+              <p data-slot="ai.features.3.text">Compare moves like paying down a 7% car loan, getting a 401(k) match, or saving for a rental.</p>
+            </figcaption>
+          </figure>
+          <figure class="ai-item">
+            <div class="shot"><img src="/assets/images/preston-ai/preston-ai-chat-1200.webp" srcset="/assets/images/preston-ai/preston-ai-chat-600.webp 600w, /assets/images/preston-ai/preston-ai-chat-1200.webp 1200w" sizes="(max-width: 767px) 84vw, 540px" width="1200" height="750" loading="lazy" decoding="async" alt="Preston AI answering how fast you can pay off debt, using three debts pulled from your banks"></div>
+            <figcaption>
+              <h3 data-slot="ai.features.4.title">Upload your tax return</h3>
+              <p data-slot="ai.features.4.text">Upload documents like your tax return and ask plain-English questions on the website or through iMessage.</p>
+            </figcaption>
+          </figure>
         </div>
-
-        <ul class="advisor__points">
-          <li><span>01</span><div><strong>Bring your real numbers.</strong> Ask in plain English and include the facts that change the answer: income, debt, accounts, goals.</div></li>
-          <li><span>02</span><div><strong>Get a specific answer.</strong> A generic chatbot hedges and sends you off to "consult a professional." The Advisor answers from the course and shows you the order of operations.</div></li>
-          <li><span>03</span><div><strong>Walk into your CPA's office with the decision made.</strong> You still implement with your own professionals. You just arrive knowing the strategy and the questions to ask.</div></li>
-        </ul>
+        <p class="ai-limit" data-slot="ai.limit">Preston AI is an AI, not Preston and not a licensed advisor, so final decisions go through your CPA.</p>
       </div>
     </section>
 
-    <section class="scope">
-      <div class="reading">
-        <h2>What you're getting. What stays with the full program.</h2>
-        <div class="scope__grid">
-          <div class="scope__column">
-            <h3>Included</h3>
+    <section class="section included" id="included">
+      <div class="wrap reveal">
+        <h2 data-slot="included.heading">What comes with your enrollment</h2>
+        <div class="compare">
+          <div class="compare__col">
+            <h3 data-slot="included.yes.title">Course and Preston AI</h3>
             <ul>
-              <li>All five pillars and 100+ lessons</li>
-              <li>Course templates, scripts, checklists, and calculators</li>
-              <li>Legacy Wealth AI Advisor access</li>
-              <li>Lifetime access to the course</li>
+              <li data-slot="included.yes.1">Five pillars and 100+ video lessons</li>
+              <li data-slot="included.yes.2">Templates, scripts, checklists, and calculators</li>
+              <li data-slot="included.yes.3">Access to Preston AI</li>
+              <li data-slot="included.yes.4">Lifetime access to the course</li>
             </ul>
           </div>
-          <div class="scope__column scope__column--out">
-            <h3>Reserved for the full program</h3>
+          <div class="compare__col compare__col--muted">
+            <h3 data-slot="included.full.title">Full coaching program only</h3>
             <ul>
-              <li>A custom wealth plan for your household</li>
-              <li>Weekly live coaching calls</li>
-              <li>A dedicated Legacy Wealth Guide</li>
-              <li>The Wealth Circle community</li>
+              <li data-slot="included.full.1">A custom household wealth plan</li>
+              <li data-slot="included.full.2">Weekly live coaching calls</li>
+              <li data-slot="included.full.3">A dedicated Legacy Wealth Guide</li>
+              <li data-slot="included.full.4">Wealth Circle community and hands-on help</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="offer" id="enroll">
-      <div class="shell">
-        <div class="offer__card">
-          <div class="offer__price">
-            <div>
-              <p class="eyebrow">Straightforward pricing</p>
-              <h2>Course +<br>AI Advisor</h2>
-            </div>
-            <div>
-              <div class="price"><sup>$</sup>1,500</div>
-              <p class="price-monthly">or from <strong>$125/month</strong> for 12 months with Splitit</p>
-              <p class="price-note">Same $1,500 total, just split. Full access from your first payment.</p>
-            </div>
+    <section class="section checkout" id="enroll" data-sticky-hide>
+      <div class="wrap">
+        <h2 data-slot="checkout.heading">Enroll in the course and Preston AI</h2>
+        <p class="lead" data-slot="checkout.line">Your total stays $1,500 either way, and you get full access from your first payment.</p>
+        <p class="price">$1<span class="price__comma">,</span>500</p>
+        <p class="price-sub">or from <span class="money">$125/month</span> for 12 months with Splitit</p>
+        <div class="checkout__box">
+          <p id="checkout-status" class="checkout-status" role="status">Loading secure checkout...</p>
+          <div id="checkout" data-checkout-plan-id="plan_ThiSPZvUsDffb" data-ph-no-capture aria-busy="true">
+            <div id="checkout-element"></div>
           </div>
-          <div class="offer__body">
-            <h3>The complete system, ready to run tonight.</h3>
-            <ul class="offer__list">
-              <li><strong>Five complete pillars</strong><br>More than 100 video lessons in a defined sequence, the same curriculum the full program teaches from</li>
-              <li><strong>Working tools</strong><br>CPA vetting checklist, tax-planning timeline, debt guide, calculators, and course templates</li>
-              <li><strong>Legacy Wealth AI Advisor</strong><br>Bring your real numbers, get course-based answers and the exact lesson to open next</li>
-              <li><strong>Lifetime course access</strong><br>Return as your income, goals, and decisions change</li>
-            </ul>
-            <a class="button" href="#checkout">Enroll in Course + AI · $1,500 or $125/mo</a>
-            <p class="offer__microcopy">Pay in full or choose Splitit monthly installments at checkout · Secure checkout · Access details sent after purchase</p>
+          <div id="checkout-error" class="checkout-error" role="alert" hidden>
+            <p>We couldn't load the secure checkout. Please reload it and try again.</p>
+            <button id="checkout-retry" class="button" type="button">Reload checkout</button>
           </div>
+          <noscript><p>Please enable JavaScript to load the secure checkout.</p></noscript>
         </div>
+        <p class="fine" data-slot="checkout.fine">Use the secure checkout and receive your access details by email.</p>
       </div>
     </section>
 
-    <section class="faq">
-      <div class="reading">
-        <p class="eyebrow">Questions worth asking</p>
-        <h2>Before you spend $1,500.</h2>
+    <section class="section section--flush faq" id="faq" aria-label="Questions">
+      <div class="faq-list reveal">
         <details>
-          <summary>Why does the course cost $1,500?</summary>
-          <p>Because it's the same five-pillar curriculum the full Legacy Wealth Blueprint is built around, a program that costs five figures with the coaching and implementation team included. You're getting the system and the tools without the human team. The price still has to work in your real budget, though. If the purchase would add high-interest debt, skip it today.</p>
+          <summary data-slot="faq.1.q">Why does this cost $1,500, and is it worth it at my stage?</summary>
+          <p data-slot="faq.1.a">You get the five-pillar course from our five-figure program plus Preston AI, without paying for a coaching team. Skip the purchase today if it would add high-interest debt.</p>
         </details>
         <details>
-          <summary>Is there a payment plan?</summary>
-          <p>Yes. At checkout you can pay in full or split the $1,500 into monthly installments through Splitit, as low as $125 a month for 12 months. The total stays $1,500, and you get full access to the course and the AI Advisor from your first payment.</p>
+          <summary data-slot="faq.2.q">Does Preston AI replace a CPA or financial advisor?</summary>
+          <p data-slot="faq.2.a">No, Preston AI is for education only. You still confirm final tax, legal, and investment decisions with your own CPA or advisor, and you walk in knowing what to ask.</p>
         </details>
         <details>
-          <summary>Is this the same curriculum used in the full program?</summary>
-          <p>Yes. Same five pillars, same strategy sequence, same lessons our members work from. The custom household plan, live coaching, dedicated guide, community, and hands-on implementation support remain exclusive to the full program.</p>
+          <summary data-slot="faq.3.q">Can I apply for the full program later?</summary>
+          <p data-slot="faq.3.a">Yes, you can apply for the full Legacy Wealth Blueprint again if your income or financial situation grows. Any upgrade terms depend on the offer available at that time.</p>
         </details>
-        <details>
-          <summary>Can I apply for the full program later?</summary>
-          <p>Yes. If your income or financial complexity changes, you can apply again. Any upgrade terms would be based on the offer available at that time.</p>
-        </details>
-        <details>
-          <summary>Does the AI Advisor replace a CPA, attorney, or financial advisor?</summary>
-          <p>No. The Advisor gives you education based on the course: which strategies may fit your situation, in what order, and where to learn them. You still confirm and implement tax, legal, and investment decisions with qualified professionals. The difference is you walk in already knowing what to ask for.</p>
-        </details>
-      </div>
-    </section>
-
-    <section class="close">
-      <div class="shell">
-        <p class="eyebrow">Your next step</p>
-        <h2>Open the first lesson tonight.</h2>
-        <p>$1,500 once, or from $125/month for 12 months with Splitit. Lifetime access either way.</p>
-        <p id="checkout-status" class="checkout-status" role="status">Loading secure checkout...</p>
-        <div id="checkout" data-checkout-plan-id="plan_ThiSPZvUsDffb" data-ph-no-capture aria-busy="true">
-          <div id="checkout-element"></div>
-        </div>
-        <div id="checkout-error" class="checkout-error" role="alert" hidden>
-          <p>We couldn't load the secure checkout. Please reload it and try again.</p>
-          <button id="checkout-retry" class="button" type="button">Reload checkout</button>
-        </div>
-        <noscript><p>Please enable JavaScript to load the secure checkout.</p></noscript>
-        <div class="close__note">Secure checkout · Access details sent after purchase</div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="shell footer__grid">
-      <div><span class="wordmark">Legacy <span>Investing Show</span></span></div>
+  <footer class="site-footer" data-sticky-hide>
+    <div class="wrap">
+      <div><span class="wordmark">Legacy Investing Show</span></div>
       <div>
-        <p>The information provided is for educational purposes only and should not be construed as tax, legal, or investment advice. Individual results vary based on personal circumstances. Consult qualified professionals before making financial decisions.</p>
+        <p data-slot="footer.disclaimer">Legacy Wealth Blueprint Foundations and Preston AI are for education only and do not provide tax, legal, or financial advice. Preston AI is an AI tool and can make mistakes. Individual results vary. Always check tax, legal, and investment decisions with a qualified CPA, attorney, or advisor.</p>
         <p>© Legacy Investing Show. All rights reserved.</p>
       </div>
     </div>
   </footer>
+
+  <div class="sticky-cta" id="sticky-cta" aria-hidden="true">
+    <a class="button" href="#checkout" tabindex="-1" data-slot="sticky.button">Get full access</a>
+  </div>
+
   <script src="https://cdn.whop.com/elements/amber/elements.js" data-whop-elements defer></script>
   <script src="/assets/js/lwbfoundations-checkout.js" defer></script>
   <script src="/assets/js/webinar-analytics.js" defer></script>
+  <script>
+    (function () {
+      'use strict';
+
+      var video = document.getElementById('vsl-video');
+      var play = document.getElementById('vsl-play');
+      if (video && play) {
+        // Native controls only after the first play, so the poster shows one play button.
+        video.controls = false;
+        play.addEventListener('click', function () {
+          play.hidden = true;
+          video.controls = true;
+          var attempt = video.play();
+          if (attempt && attempt.catch) attempt.catch(function () {});
+        });
+        video.addEventListener('play', function () { play.hidden = true; video.controls = true; });
+      }
+
+      if (!('IntersectionObserver' in window)) return;
+
+      var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reduceMotion) {
+        document.documentElement.classList.add('js');
+        var revealer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('is-in');
+            revealer.unobserve(entry.target);
+          });
+        }, { rootMargin: '0px 0px -6% 0px' });
+        Array.prototype.forEach.call(document.querySelectorAll('.reveal'), function (el) { revealer.observe(el); });
+      }
+
+      var sticky = document.getElementById('sticky-cta');
+      if (!sticky) return;
+      var stickyLink = sticky.querySelector('a');
+      var onScreen = [];
+      // Whop keeps an invisible challenge dialog open, so only count modals a person can see.
+      function modalOpen() {
+        return Array.prototype.some.call(document.querySelectorAll('dialog[open], [aria-modal="true"]'), function (el) {
+          var style = window.getComputedStyle(el);
+          return el.getAttribute('aria-hidden') !== 'true' && style.visibility !== 'hidden' &&
+            style.pointerEvents !== 'none' && parseFloat(style.opacity) > 0;
+        });
+      }
+      function updateSticky() {
+        var show = window.scrollY > 240 && onScreen.length === 0 && !modalOpen();
+        sticky.classList.toggle('is-visible', show);
+        sticky.setAttribute('aria-hidden', show ? 'false' : 'true');
+        stickyLink.tabIndex = show ? 0 : -1;
+      }
+      var watcher = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          var index = onScreen.indexOf(entry.target);
+          if (entry.isIntersecting && index < 0) onScreen.push(entry.target);
+          if (!entry.isIntersecting && index > -1) onScreen.splice(index, 1);
+        });
+        updateSticky();
+      });
+      Array.prototype.forEach.call(document.querySelectorAll('[data-sticky-hide]'), function (el) { watcher.observe(el); });
+      window.addEventListener('scroll', updateSticky, { passive: true });
+      updateSticky();
+    }());
+  </script>
 </body>
 </html>

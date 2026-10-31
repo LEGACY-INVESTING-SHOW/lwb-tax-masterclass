@@ -72,7 +72,7 @@ test('mounts full checkout for the unchanged plan without client-side pricing', 
   assert.equal(state.mounted, '#checkout-element');
   assert.equal(state.checkoutOptions.amount, undefined);
   assert.equal(state.checkoutOptions.appearance.theme.appearance, 'light');
-  assert.equal(state.checkoutOptions.appearance.classes['whop-CheckoutPayButton'].backgroundColor, '#3358d4');
+  assert.equal(state.checkoutOptions.appearance.classes['whop-CheckoutPayButton'].backgroundColor, '#1e5b43');
 });
 
 test('passes supported attribution and allowlisted metadata without copying arbitrary query fields', () => {

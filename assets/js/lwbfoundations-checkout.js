@@ -120,8 +120,8 @@
       metadata: metadata,
       affiliateCode: stringValue(params.get('a')) || undefined,
       appearance: {
-        theme: { appearance: 'light', accentColor: 'blue', grayColor: 'slate' },
-        classes: { 'whop-CheckoutPayButton': { backgroundColor: '#3358d4' } }
+        theme: { appearance: 'light', accentColor: 'green', grayColor: 'gray' },
+        classes: { 'whop-CheckoutPayButton': { backgroundColor: '#1e5b43' } }
       },
       onComplete: function (result) {
         if (!result || result.result !== 'payment' || !/^pay_[A-Za-z0-9]+$/.test(result.paymentId || '')) return;
