@@ -8,6 +8,6 @@ The registration form posts to a Vercel Serverless Function at `/api/register`, 
 
 ## Updating the Webinar Schedule
 
-Update the static `data-ev="full"` text as well as `EVENT_DATE`, `EVENT_DISPLAY`, and `EVENT_DAYTIME` in `index.html`, `future.html`, `tax-strategies.html`, and `taxstrategiesyt.html`. Update the three static date labels in each confirmation file (`confirmation.html` and `taxstrategiesconfirmationyt.html`) too. Search engines and other crawlers can read the HTML before JavaScript runs, so the static dates must match the event settings.
+Update the static `data-ev="full"` text as well as `EVENT_DATE`, `EVENT_DISPLAY`, and `EVENT_DAYTIME` in `index.html`, `future.html`, `tax-strategies.html`, `tax-strategies-december-31st.html`, and `taxstrategiesyt.html`. Update the three static date labels in each confirmation file (`confirmation.html` and `taxstrategiesconfirmationyt.html`) too. Search engines and other crawlers can read the HTML before JavaScript runs, so the static dates must match the event settings.
 
 Before pushing, check that the previous date is absent from all six files. After deployment, verify the raw HTML from all six production routes, including the static labels. Update the AddEvent calendar ID separately when supplied.

@@ -85,6 +85,14 @@
       "destination": "/lwbfoundations.html"
     },
     {
+      "source": "/tax-strategies-december-31st",
+      "destination": "/tax-strategies-december-31st.html"
+    },
+    {
+      "source": "/tax-strategies-december-31st/",
+      "destination": "/tax-strategies-december-31st.html"
+    },
+    {
       "source": "/tax-strategies",
       "destination": "/tax-strategies.html"
     },
